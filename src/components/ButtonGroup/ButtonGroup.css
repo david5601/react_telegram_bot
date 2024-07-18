@@ -1,0 +1,26 @@
+.button-group {
+    height: 100px;
+    background-image: linear-gradient(323deg, #713a8d, transparent);
+    border-radius: 5px;
+    border-color: #fefeff;
+    border-width: 10px;
+    border-style: unset;
+    margin-bottom: 50px;
+
+    padding-left: 20px;
+    padding-top: 2px;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: space-between;
+    align-items: stretch;
+    padding-right: 20px;
+    min-width: 300px;
+}
+
+/* .button-group img {
+    max-width: 45%;
+
+} */

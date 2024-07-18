@@ -1,11 +1,16 @@
 import "./App.css";
 import React, { useEffect } from "react";
+import { ReactDOM } from "react-dom";
+import Welcome from "./components/Welcome";
+import ButttonGroup from "./components/ButtonGroup/ButttonGroup";
+import tronIcon from "./assets/images/tron.webp"
+import bnbIcon from "./assets/images/Binance.webp"
 
-window.Telegram.WebApp.MainButton.show();
-window.Telegram.WebApp.MainButton.setText("Hello");
-window.Telegram.WebApp.MainButton.onClick(() => {
-  window.Telegram.WebApp.showAlert("Hello World");
-});
+// window.Telegram.WebApp.MainButton.show();
+// window.Telegram.WebApp.MainButton.setText("Hello");
+// window.Telegram.WebApp.MainButton.onClick(() => {
+//   window.Telegram.WebApp.showAlert("Hello World");
+// });
 
 function App() {
   useEffect(() => {
@@ -20,12 +25,9 @@ function App() {
   return (
     <>
       <div className="App">
-        <h1>Hello World</h1>
-      </div>
-      <div className="bar">
-        <ul className="">
-
-        </ul>
+        <Welcome name='Cool' />
+        <ButttonGroup name="Tron(TRX)" src={tronIcon}/>
+        <ButttonGroup name="Binance Coin(BNB)" src={bnbIcon}/>
       </div>
     </>
   );
