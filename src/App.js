@@ -1,11 +1,6 @@
 import './App.css';
 import React, { useEffect } from 'react';
 
-window.Telegram.WebApp.MainButton.show();
-window.Telegram.WebApp.MainButton.setText("Hello World");
-window.Telegram.WebApp.MainButton.onClick(() => {
-  window.Telegram.WebApp.showAlert("Hello World");
-});
 
 
 function App() {
