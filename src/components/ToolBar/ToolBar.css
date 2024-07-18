@@ -19,7 +19,7 @@
   
 @media (min-width: 576px) {
     .bar__list {
-        grid-gap:x
+        grid-gap:39x
     }
 }
 
@@ -37,7 +37,7 @@
     grid-template-columns: repeat(4,1fr);
     width: -webkit-fit-content;
     width: -moz-fit-content;
-    width: fit-content;
+    width: fit-content
 }
 
 

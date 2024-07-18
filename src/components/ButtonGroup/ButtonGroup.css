@@ -1,7 +1,7 @@
 .button-group {
-    height: 100px;
-    background-image: linear-gradient(323deg, #713a8d, transparent);
-    border-radius: 5px;
+    height: 115px;
+    background-image: linear-gradient(180deg, #0f1024 0%, #14192f 100%);
+    border-radius: 20px;
     border-color: #fefeff;
     border-width: 10px;
     border-style: unset;
