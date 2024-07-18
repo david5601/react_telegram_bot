@@ -8,8 +8,8 @@ function App() {
   useEffect(() => {
     if (window.Telegram && window.Telegram.WebApp) {
       window.Telegram.WebApp.ready();
-      console.log("Hello World");
-      window.Telegram.WebApp.showAlert("Hello World!");
+      // console.log("Hello World");
+      // window.Telegram.WebApp.showAlert("Hello World!");
     }
     console.log("No Hello World");
     // window.Telegram.WebApp.MainButton.show();
