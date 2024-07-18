@@ -1,23 +1,23 @@
-import logo from './logo.svg';
 import './App.css';
+import React, { useEffect } from 'react';
+
+window.Telegram.WebApp.MainButton.show();
+window.Telegram.WebApp.MainButton.setText("Hello World");
+window.Telegram.WebApp.MainButton.onClick(() => {
+  window.Telegram.WebApp.showAlert("Hello World");
+});
+
 
 function App() {
+  useEffect(() => {
+    if (window.Telegram && window.Telegram.WebApp) {
+      window.Telegram.WebApp.ready();
+    }
+  }, []);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Hello World</h1>  
     </div>
   );
 }
