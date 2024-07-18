@@ -1,5 +1,5 @@
-import './App.css';
-import React, { useEffect } from 'react';
+import "./App.css";
+import React, { useEffect } from "react";
 
 function App() {
   // useEffect(() => {
@@ -12,9 +12,16 @@ function App() {
   // }, []);
 
   return (
-    <div className="App">
-      <h1>Hello World</h1>  
-    </div>
+    <>
+      <div className="App">
+        <h1>Hello World</h1>
+      </div>
+      <div className="bar">
+        <ul className="">
+
+        </ul>
+      </div>
+    </>
   );
 }
 
