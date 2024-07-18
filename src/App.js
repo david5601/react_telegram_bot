@@ -1,6 +1,5 @@
 import "./App.css";
 import React, { useEffect } from "react";
-import { ReactDOM } from "react-dom";
 import Welcome from "./components/Welcome";
 import ButttonGroup from "./components/ButtonGroup/ButttonGroup";
 import tronIcon from "./assets/images/tron.webp"
