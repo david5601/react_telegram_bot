@@ -5,6 +5,7 @@ import Welcome from "./components/Welcome";
 import ButttonGroup from "./components/ButtonGroup/ButttonGroup";
 import tronIcon from "./assets/images/tron.webp"
 import bnbIcon from "./assets/images/Binance.webp"
+import ToolBar from "./components/ToolBar/ToolBar";
 
 // window.Telegram.WebApp.MainButton.show();
 // window.Telegram.WebApp.MainButton.setText("Hello");
@@ -16,10 +17,7 @@ function App() {
   useEffect(() => {
     if (window.Telegram && window.Telegram.WebApp) {
       window.Telegram.WebApp.ready();
-      // console.log("Hello World!");
-      // window.Telegram.WebApp.showAlert("Hello World");
     }
-    // console.log("No Hello World");
   }, []);
 
   return (
@@ -28,6 +26,7 @@ function App() {
         <Welcome name='Cool' />
         <ButttonGroup name="Tron(TRX)" src={tronIcon}/>
         <ButttonGroup name="Binance Coin(BNB)" src={bnbIcon}/>
+        <ToolBar/>
       </div>
     </>
   );

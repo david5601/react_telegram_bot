@@ -14,23 +14,4 @@ code {
     monospace;
 }
 
-.bar {
-  position: fixed;
-  bottom: 30px;
-  left: var(--containter-offset);
-  right: var(--containter-offset);
-  z-index: 60;
-  padding: 10px 25px 8px;
-  border: 1px solid #3b315d;
-  border-radius: 999px;
-  height: 63px;
-  background: #14172a;
-  -webkit-box-pack: center;
-  justify-content: center;
-}
 
-ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}

@@ -1,3 +1,50 @@
+:root {
+  --error-bg: #d01f1f;
+  --body-bg: #01021e;
+  --body-font-size: 16px;
+  --content-width: 1170px;
+  --container-offset: clamp(21px, 2.0513vw, 24px);
+  --container-width: calc(var(--content-width) + (var(--container-offset) * 2));
+  --scrollbar-thumb: rgb(43, 52, 206);
+  --scrollbar-track: #121835;
+  --scrollbar-track-hover: transparent;
+  --overlay-bg: rgba(0, 0, 0, 0.5);
+  --select-inner-bg: #404040;
+  --select-inner-border: #FDFDFD;
+  --select-focus-border: #FDFDFD;
+  --font-family: "sf-pro-display",sans-serif;
+  --second-family: "gilroy",sans-serif;
+  --cl-a: 255,255,255;
+  --cl-b: 0,0,0;
+  --cl-c: 159,153,187;
+  --cl-d: 1,2,30;
+  --cl-e: 19,98,241;
+  --bg-a: 255,255,255;
+  --bg-b: 0,0,0;
+  --bg-c: 20,23,42;
+  --bg-d: 19,98,241;
+  --bg-e: 255,219,27;
+  --bg-f: 51,59,110;
+  --bg-g: 34,129,246;
+  --bg-h: 237,29,73;
+  --bg-i: 3,2,33;
+  --br-a: #1e1f38;
+  --br-b: #313260;
+  --br-c: #1362f1;
+  --br-d: #3b315d;
+  --gr-a: linear-gradient(90deg, #1e1f38 0%, rgba(30, 31, 56, 0) 100%);
+  --gr-b: linear-gradient(180deg, #0f1024 0%, rgba(20, 25, 47, 0) 100%);
+  --gr-c: linear-gradient(180deg, #0f1024 0%, #14192f 100%)
+}
+
+.title {
+  font-family: var(--second-family);
+  font-weight: 700;
+  line-height: 113%;
+  letter-spacing: -.01em;
+  color: rgba(var(--cl-a),1)
+}
+
 .App {
   text-align: left;
   padding-left: 25px;
@@ -39,3 +86,59 @@
     transform: rotate(360deg);
   }
 }
+
+/* @font-face {
+  font-style: normal;
+  font-weight: 400;
+  font-family: sf-pro-display;
+  font-display: swap;
+  src: url(../assets/fonts/sf-pro-display-regular.woff2) format("woff2"),url(../assets/fonts/sf-pro-display-regular.woff) format("woff")
+}
+
+@font-face {
+  font-style: normal;
+  font-weight: 500;
+  font-family: sf-pro-display;
+  font-display: swap;
+  src: url(../assets/fonts/sf-pro-display-medium.woff2) format("woff2"),url(../assets/fonts/sf-pro-display-medium.woff) format("woff")
+}
+
+@font-face {
+  font-style: normal;
+  font-weight: 600;
+  font-family: sf-pro-display;
+  font-display: swap;
+  src: url(../assets/fonts/sf-pro-display-semibold.woff2) format("woff2"),url(../assets/fonts/sf-pro-display-semibold.woff) format("woff")
+}
+
+@font-face {
+  font-style: normal;
+  font-weight: 700;
+  font-family: sf-pro-display;
+  font-display: swap;
+  src: url(../assets/fonts/sf-pro-display-bold.woff2) format("woff2"),url(../assets/fonts/sf-pro-display-bold.woff) format("woff")
+}
+
+@font-face {
+  font-style: normal;
+  font-weight: 400;
+  font-family: gilroy;
+  font-display: swap;
+  src: url(../assets/fonts/gilroy-regular.woff2) format("woff2"),url(../assets/fonts/gilroy-regular.woff) format("woff")
+}
+
+@font-face {
+  font-style: normal;
+  font-weight: 600;
+  font-family: gilroy;
+  font-display: swap;
+  src: url(../assets/fonts/gilroy-semi-bold.woff2) format("woff2"),url(../assets/fonts/gilroy-semi-bold.woff) format("woff")
+}
+
+@font-face {
+  font-style: normal;
+  font-weight: 700;
+  font-family: gilroy;
+  font-display: swap;
+  src: url(../assets/fonts/gilroy-bold.woff2) format("woff2"),url(../assets/fonts/gilroy-bold.woff) format("woff")
+} */
