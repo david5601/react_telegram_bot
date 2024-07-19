@@ -17,8 +17,10 @@ function App() {
     <>
       <div className="App">
         <Welcome name='Cool' />
-        <ButttonGroup name="Tron(TRX)" src={tronIcon}/>
-        <ButttonGroup name="Binance Coin(BNB)" src={bnbIcon}/>
+        <div style={{paddingTop: "20px"}}>
+          <ButttonGroup name="Tron(TRX)" src={tronIcon}/>
+          <ButttonGroup name="Binance Coin(BNB)" src={bnbIcon}/>
+        </div>
         <ToolBar/>
       </div>
     </>

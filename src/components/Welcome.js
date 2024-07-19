@@ -9,7 +9,7 @@ class Welcome extends Component {
                 <h2 className='title'>Hi, {this.props.name}!</h2>
             </div>
             <div>
-                <h1 style={{paddingBottom: "10px"}}>Select the currency you want to mine</h1>
+                <h1 style={{paddingBottom: "10px", fontWeight:"600", fontSize:"1.9em"}}>Select the currency you want to mine</h1>
             </div>
         </>
     );

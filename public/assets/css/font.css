@@ -1,0 +1,55 @@
+/* @font-face {
+    font-style: normal;
+    font-weight: 400;
+    font-family: sf-pro-display;
+    font-display: swap;
+    src: url(../fonts/sf-pro-display-regular.woff2) format("woff2"),url(../fonts/sf-pro-display-regular.woff) format("woff")
+} */
+
+@font-face {
+    font-style: normal;
+    font-weight: 500;
+    font-family: sf-pro-display;
+    font-display: swap;
+    src: url(../fonts/sf-pro-display-medium.woff2) format("woff2"),url(../fonts/sf-pro-display-medium.woff) format("woff")
+}
+
+@font-face {
+    font-style: normal;
+    font-weight: 600;
+    font-family: sf-pro-display;
+    font-display: swap;
+    src: url(../fonts/sf-pro-display-semibold.woff2) format("woff2"),url(../fonts/sf-pro-display-semibold.woff) format("woff")
+}
+
+@font-face {
+    font-style: normal;
+    font-weight: 700;
+    font-family: sf-pro-display;
+    font-display: swap;
+    src: url(../fonts/sf-pro-display-bold.woff2) format("woff2"),url(../fonts/sf-pro-display-bold.woff) format("woff")
+}
+
+@font-face {
+    font-style: normal;
+    font-weight: 400;
+    font-family: gilroy;
+    font-display: swap;
+    src: url(../fonts/gilroy-regular.woff2) format("woff2"),url(../fonts/gilroy-regular.woff) format("woff")
+}
+
+@font-face {
+    font-style: normal;
+    font-weight: 600;
+    font-family: gilroy;
+    font-display: swap;
+    src: url(../fonts/gilroy-semi-bold.woff2) format("woff2"),url(../fonts/gilroy-semi-bold.woff) format("woff")
+}
+
+@font-face {
+    font-style: normal;
+    font-weight: 700;
+    font-family: gilroy;
+    font-display: swap;
+    src: url(../fonts/gilroy-bold.woff2) format("woff2"),url(../fonts/gilroy-bold.woff) format("woff")
+}

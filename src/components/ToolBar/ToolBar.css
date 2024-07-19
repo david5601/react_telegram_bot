@@ -1,6 +1,6 @@
 .bar {
     position: fixed;
-    bottom: 120px;
+    bottom: 8vw;
     left: var(--container-offset);
     right: var(--container-offset);
     z-index: 60;
@@ -37,7 +37,8 @@
     grid-template-columns: repeat(4,1fr);
     width: -webkit-fit-content;
     width: -moz-fit-content;
-    width: fit-content
+    width: fit-content;
+    padding: 0px;
 }
 
 
