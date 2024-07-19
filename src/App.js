@@ -6,12 +6,6 @@ import tronIcon from "./assets/images/tron.webp"
 import bnbIcon from "./assets/images/Binance.webp"
 import ToolBar from "./components/ToolBar/ToolBar";
 
-// window.Telegram.WebApp.MainButton.show();
-// window.Telegram.WebApp.MainButton.setText("Hello");
-// window.Telegram.WebApp.MainButton.onClick(() => {
-//   window.Telegram.WebApp.showAlert("Hello World");
-// });
-
 function App() {
   useEffect(() => {
     if (window.Telegram && window.Telegram.WebApp) {
