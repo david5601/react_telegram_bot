@@ -1,17 +1,16 @@
 import React from 'react'
 import "./Wallets.css"
 // import "bootstrap/dist/css/bootstrap.css"
-import tronIcon from "../../assets/images/tron.webp"
 import binanceIcon from "../../assets/images/Binance.webp"
-const WithdrawButton = (props) => {
+const BNBWithdrawButton = (props) => {
   return (
     <>
-        <div className='button-group-withdraw-tron'>
+        <div className='button-group-withdraw-bnb'>
             <div style={{display:"flex", alignItems: "center"}}>
-                <img src={tronIcon} style={{maxHeight:"55px"}}></img>
+                <img src={binanceIcon} style={{maxHeight:"55px"}}></img>
                 <div>
-                    <p style={{fontSize: "14px", padding: "0px", margin: "0px"}}>Tron Balance:</p>
-                    <p style={{fontSize: "19px", fontWeight: "700", padding: "0px", margin: "0px"}}>5.0352 TRX</p>
+                    <p style={{fontSize: "14px", padding: "0px", margin: "0px"}}>BNB Balance:</p>
+                    <p style={{fontSize: "19px", fontWeight: "700", padding: "0px", margin: "0px"}}>5.0352 BNB</p>
                 </div>
                 
             </div>
@@ -26,4 +25,4 @@ const WithdrawButton = (props) => {
   )
 }
 
-export default WithdrawButton;
+export default BNBWithdrawButton;

@@ -1,0 +1,43 @@
+.title {
+    display: flex;
+    align-items: center;
+    padding-bottom: 13px;
+}
+
+.money-bag{
+    padding-left: 20px;
+    max-height: 31px;
+}
+
+.task-element {
+    background-color: #161629;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    padding-left: 13px;
+    margin-bottom: 15px;
+    min-width: 331px;
+}
+
+.task-icon {
+    max-height: 33px;
+}
+
+.task-icon {
+    margin: 0px;
+}
+
+.task-name {
+    margin: 0px;
+}
+
+.task-improve-speed {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    margin: 0px;
+}
+
+.task-checked {
+    max-height: 33px;
+}

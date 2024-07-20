@@ -1,5 +1,6 @@
 import React from 'react'
-import WithdrawButton from './WithdrawButton'
+import TronWithdrawButton from './TronWithdrawButton'
+import BNBWithdrawButton from './BNBWithdrawButton'
 import WalletTransactionHistory from './WalletTransactionHistory'
 import "./Wallets.css"
 const Wallets = () => {
@@ -8,8 +9,8 @@ const Wallets = () => {
         <div className='wallet-section'>
             <div className='container'>
                 <div className='wallet-section__inner'>
-                    <WithdrawButton/>
-                    <WithdrawButton/>
+                    <TronWithdrawButton/>
+                    <BNBWithdrawButton/>
                     <WalletTransactionHistory/>
                 </div>
             </div>

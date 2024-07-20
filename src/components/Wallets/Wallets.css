@@ -74,7 +74,7 @@
 
 .button-group-withdraw-bnb {
     height: 100px;
-    background-image: linear-gradient(97deg, rgb(93 26 26) -25%, #0a1027 47%);
+    background-image: linear-gradient(97deg, rgb(131 120 24) -25%, #0a1027 47%);
     border-radius: 10px;
     border: 1px solid #3b315d;
     margin-bottom: 30px;
@@ -120,7 +120,8 @@
 .btn3d.btn-primary {
 	box-shadow: 0 0 0 1px #417fbd inset, 0 0 0 2px rgba(255, 255, 255, 0.15) inset, 0 8px 0 0 #4D5BBE, 0 8px 8px 1px rgba(0, 0, 0, 0.5);
 	background-color: #4274D7;
-    font-size: 16px;
+    font-size: 14px;
+    font-weight: 500;
     color: white;
     border-radius: 20px;
     max-height: 45px;
