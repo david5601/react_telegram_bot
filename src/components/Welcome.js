@@ -1,4 +1,6 @@
 import React from 'react'
+import {BrowserRouter as Router, Link, Switch, Routes, Route, useRouteMatch} from "react-router-dom"
+import TronMining from './TronMining/TronMining';
 import "../App.css"
 import ButtonGroup from "./ButtonGroup/ButtonGroup";
 import tronIcon from "../assets/images/tron.webp"
@@ -17,8 +19,13 @@ const Welcome = (props) => {
                 </h1>
             </div>
             <div style={{paddingTop: "20px"}}>
-                <ButtonGroup name="Tron(TRX)" src={tronIcon}/>
-                <ButtonGroup name="Binance Coin(BNB)" src={bnbIcon}/>
+                <Link to="/tron_mining" className='mining_route'>
+                    <ButtonGroup name="Tron(TRX)" src={tronIcon}/>
+                </Link>
+
+                <Link to="/binance_mining" className='mining_route'>
+                    <ButtonGroup name="Binance Coin(BNB)" src={bnbIcon}/>
+                </Link>
             </div>
         </>
     );

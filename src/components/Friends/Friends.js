@@ -4,10 +4,12 @@ import "./Friends.css"
 
 const Friends = (props) => {
     const [invteurl, setInviteUrl] = useState("https://t.me/farmix_mining_bot?start=6858672674");
-    const handleCopy = () => {
-        var modal = document.getElementById("copyModay");
-        modal.style.display="block"
-
+    const copyToClipboard = async () => {
+        try {
+          await navigator.clipboard.writeText(invteurl);
+        } catch (err) {
+            console.log(err)
+        }
     }
 
     return (
@@ -23,12 +25,12 @@ const Friends = (props) => {
                             <h2 className='invite'>
                                 Your Invite Link
                             </h2>
-                            <div className='invite-url'>
+                            <div className='invite-url' onClick={copyToClipboard}>
                                 <div>
                                     {invteurl}
                                 </div>
                             </div>
-                            <div className='clickhelp' onClick={handleCopy}>
+                            <div className='clickhelp' >
                                     Click on the link to copy
                             </div>
                         </div>
@@ -91,16 +93,16 @@ const Friends = (props) => {
             <LstestOperations/>
         </div>
 
-        <div id="copyModay" class="modal">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <span class="close">&times;</span>
+        <div id="copyModay" className="modal">
+            <div className="modal-content">
+                <div className="modal-header">
+                    <span className="close">&times;</span>
                     <h2>Farmix.biz</h2>
                 </div>
-                <div class="modal-body">
+                <div className="modal-body">
                     <p>Copied link: {invteurl}</p>
                 </div>
-                <div class="modal-footer">
+                <div className="modal-footer">
                     <div style={{display: "flex", flexDirection: "row-reverse"}}>
                         <button className='btn-hover color-9'>
                             OK

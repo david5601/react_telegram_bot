@@ -2,6 +2,7 @@ import React from 'react'
 import "./Wallets.css"
 // import "bootstrap/dist/css/bootstrap.css"
 import tronIcon from "../../assets/images/tron.webp"
+import {Link} from "react-router-dom"
 const TronWithdrawButton = (props) => {
   return (
     <>
@@ -15,9 +16,11 @@ const TronWithdrawButton = (props) => {
                 
             </div>
             <div style={{paddingTop: "17px", display: "flex"}}>
-                <button type='button' className='btn-primary btn3d'>
-                    Withdraw
-                </button>
+                <Link to="/tron_withdraw">
+                    <button type='button' className='btn-primary btn3d'>
+                        Withdraw
+                    </button>
+                </Link>
             </div>
         </div>
       

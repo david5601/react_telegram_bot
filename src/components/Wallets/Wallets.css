@@ -92,7 +92,7 @@
     min-width: 290px;
 }
 
-.btn3d {
+/* .btn3d {
 	position: relative;
 	top: -6px;
 	border: 0;
@@ -118,8 +118,8 @@
 }
 
 .btn3d.btn-primary {
-	box-shadow: 0 0 0 1px #417fbd inset, 0 0 0 2px rgba(255, 255, 255, 0.15) inset, 0 8px 0 0 #4D5BBE, 0 8px 8px 1px rgba(0, 0, 0, 0.5);
-	background-color: #4274D7;
+	box-shadow: 0 0 0 1px #0069ff inset, 0 0 0 2px rgb(245 245 245 / 0%) inset, 0 8px 0 0 #01275d, 0 8px 8px 1px rgba(0, 0, 0, 0.5);
+	background-color: #0069ff;
     font-size: 14px;
     font-weight: 500;
     color: white;
@@ -131,7 +131,7 @@
 .btn3d.btn-primary.active {
 	box-shadow: 0 0 0 1px #417fbd inset, 0 0 0 1px rgba(255, 255, 255, 0.15) inset, 0 1px 3px 1px rgba(0, 0, 0, 0.3);
 	background-color: #4274D7;
-}
+} */
 
 .transaction-history {
     color: rgba(var(--cl-c),1);

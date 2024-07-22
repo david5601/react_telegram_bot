@@ -9,9 +9,9 @@ const Wallets = () => {
         <div className='wallet-section'>
             <div className='container'>
                 <div className='wallet-section__inner'>
-                    <TronWithdrawButton/>
-                    <BNBWithdrawButton/>
-                    <WalletTransactionHistory/>
+                  <TronWithdrawButton/>
+                  <BNBWithdrawButton/>
+                  <WalletTransactionHistory/>
                 </div>
             </div>
         </div>
