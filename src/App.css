@@ -148,6 +148,6 @@ body {
 
 .btn3d.btn-danger:active,
 .btn3d.btn-danger.active {
-box-shadow: 0 0 0 1px hwb(346 24% 21%), 0 0 0 1px rgba(255, 255, 255, 0.15) inset, 0 1px 3px 1px rgba(0, 0, 0, 0.3);
-background-color: hwb(346 8% 21%);
+box-shadow: 0 0 0 1px #db214d, 0 0 0 1px rgba(255, 255, 255, 0.15) inset, 0 1px 3px 1px rgba(0, 0, 0, 0.3);
+background-color: #db214d;
 }
