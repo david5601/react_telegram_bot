@@ -36,13 +36,12 @@ function App() {
     dispatch(setAccountId(id));
   }
 
-  console.log(userID)
 
   return (
     <Router>
       <div className="App">
         <Routes>
-          <Route exact path="/" element={<Welcome name="COOL"/>}></Route>
+          <Route exact path="/" element={<Welcome name={userID}/>}></Route>
           <Route path="/wallets" element={<Wallets/>}></Route>
           <Route path="/friends" element={<Friends/>}></Route>
           <Route path="/tasks" element={<Tasks/>}></Route>
