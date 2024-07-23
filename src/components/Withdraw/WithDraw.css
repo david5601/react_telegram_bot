@@ -8,6 +8,27 @@
     justify-content: flex-start;
     flex-direction: row;
     padding-left: 10px;
+    justify-content: space-between;
+    min-width: 300px;
+}
+
+.coin-withdraw-amount input{
+    min-height: 30px;
+    width: -webkit-fill-available;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 15px;
+    
+}
+
+.coin-withdraw-amount input:focus {
+    border: none;
+    outline: none;
+}
+
+.coin-withdraw-amount input::placeholder {
+    color: white;
 }
 
 .coin-withdraw-address {
@@ -15,19 +36,35 @@
     height: 42px;
     border-radius: 99px;
     margin-top: 10px;
-    padding-left: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
     display: flex;
     align-items: center;
     justify-content: flex-start;
     flex-direction: row;
+    min-width: 300px;
+}
+
+.coin-withdraw-address input {
+    min-height: 30px;
+    width: -webkit-fill-available;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 15px;
+}
+
+.coin-withdraw-address input:focus {
+    border: none;
+    outline: none;
+}
+
+.coin-withdraw-address input::placeholder {
+    color: white;
 }
 
 .coin-img {
     width: 10%;
-    
-}
-
-.coin-withdraw-amount input{
     
 }
 

@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from "react-router-dom"
 import "./Wallets.css"
 // import "bootstrap/dist/css/bootstrap.css"
 import binanceIcon from "../../assets/images/Binance.webp"
@@ -15,9 +16,12 @@ const BNBWithdrawButton = (props) => {
                 
             </div>
             <div style={{paddingTop: "17px", display: "flex"}}>
-                <button type='button' className='btn-primary btn3d'>
-                    Withdraw
-                </button>
+                <Link to='/binance_withdraw'>
+                    <button type='button' className='btn-primary btn3d'>
+                        Withdraw
+                    </button>
+                </Link>
+                
             </div>
         </div>
       

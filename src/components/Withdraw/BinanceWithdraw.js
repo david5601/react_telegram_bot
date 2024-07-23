@@ -1,21 +1,21 @@
 import React from 'react'
-import tronIcon from "../../assets/images/tron.webp"
+import bnbIcon from "../../assets/images/Binance.webp"
 import "./WithDraw.css"
 
-const TronWithdraw = (props) => {
+const BinanceWithdraw = (props) => {
   return (
     <>
       <div>
         <h1 style={{marginBottom: "5px"}}>Withdraw</h1>
-        <p style={{fontSize: "13px", margin: "0px"}}>This amount will be sent to the TRON compatible wallet address</p>
+        <p style={{fontSize: "13px", margin: "0px"}}>This amount will be sent to the Binance Coin compatible wallet address</p>
       </div>
       <div className='coin-withdraw-amount'>
-        <img src={tronIcon} style={{width: "35px"}}></img>
+        <img src={bnbIcon} style={{width: "35px"}}></img>
         <input id='coin_amount' type='text' placeholder='0'></input>
-        <p style={{paddingLeft: "10px", paddingRight: "20px"}}>TRX</p>
+        <p style={{paddingLeft: "10px", paddingRight: "20px"}}>BNB</p>
       </div>
       <div className='coin-withdraw-address'>
-        <input id='wallet_address' type='text' placeholder='Your TRX Adress'></input>
+        <input id='wallet_address' type='text' placeholder='Your BNB Adress'></input>
       </div>
       <div className='coin-withdraw-button'>
         <button className='btn3d btn-primary'>Withdraws</button>
@@ -24,4 +24,4 @@ const TronWithdraw = (props) => {
   )
 }
 
-export default TronWithdraw;
+export default BinanceWithdraw;
