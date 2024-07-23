@@ -33,7 +33,6 @@ const TronMining = (props) => {
             <video autoPlay controls loop>
                 <source src={videoTron} type="video/mp4"/>
             </video>
-            
         </div>
         <TronMiningInfo/>
     </>

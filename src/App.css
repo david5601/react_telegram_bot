@@ -135,8 +135,8 @@ body {
 }
 
 .btn3d.btn-danger {
-  box-shadow: 0 0 0 1px #ff004a inset, 0 0 0 2px rgba(255, 255, 255, 0) inset, 0 8px 0 0 #811635, 0 8px 8px 1px rgba(0, 0, 0, 0);
-  background-color: hwb(346 6% 0%);
+  box-shadow: 0 0 0 1px #db214d inset, 0 0 0 2px rgba(255, 255, 255, 0) inset, 0 8px 0 0 #811635, 0 8px 8px 1px rgba(0, 0, 0, 0);
+  background-color: #db214d;
   font-size: 14px;
   font-weight: 600;
   color: white;

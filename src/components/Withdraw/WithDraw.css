@@ -23,6 +23,7 @@
 .coin-withdraw-button {
     display: flex;
     justify-content: center;
+    
 }
 
 .coin-withdraw-button button {
