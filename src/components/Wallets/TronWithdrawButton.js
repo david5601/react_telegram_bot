@@ -11,7 +11,7 @@ const TronWithdrawButton = (props) => {
                 <img src={tronIcon} style={{maxHeight:"55px"}}></img>
                 <div>
                     <p style={{fontSize: "14px", padding: "0px", margin: "0px"}}>Tron Balance:</p>
-                    <p style={{fontSize: "19px", fontWeight: "700", padding: "0px", margin: "0px"}}>5.0352 TRX</p>
+                    <p style={{fontSize: "19px", fontWeight: "700", padding: "0px", margin: "0px"}}>{props.tronBalance} TRX</p>
                 </div>
                 
             </div>

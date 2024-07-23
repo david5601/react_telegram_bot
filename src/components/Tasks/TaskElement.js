@@ -5,21 +5,35 @@ import "./Tasks.css";
 
 
 const TaskElement = (props) => {
+
+    const getIcon = (icon) => {
+        if (icon == "telegramIcon") {
+            return telegramIcon;
+        }
+    }
+    
+    const getTaskState = (checking) => {
+        if (checking == "checked") {
+            return checkedIcon
+        }
+        else {
+
+        }
+    }
   return (
     <>
         <div className='task-element'>
-            <img src={telegramIcon} className='task-icon'></img>
-            <div style={{paddingLeft: "10px", paddingRight: "70px", minWidth: "236px"}}>
-                <p className='task-name'>{props.taskName}</p>
+            <img src={getIcon(props.icon)} className='task-icon'></img>
+            <div style={{paddingLeft: "10px", width: "-webkit-fill-available"}}>
+                <p className='task-name'>{props.title}</p>
                 <div>
                     <p className='task-improve-speed'>
-                        ⚡ {props.speed}
-                        &nbsp;
-                        <p style={{fontSize: "12px", margin: "0px"}}>/{props.during}</p>
+                        ⚡ {props.bonus}TH/s
+                        <p style={{fontSize: "12px", margin: "0px"}}>/{props.during}days</p>
                     </p>
                 </div>
             </div>
-            <img src={checkedIcon} className='task-checked'></img>
+            <img src={getTaskState(props.state)} className='task-checked'></img>
         </div>
     </>
   )

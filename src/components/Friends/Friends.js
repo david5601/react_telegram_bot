@@ -2,8 +2,18 @@ import {useEffect, useState} from 'react'
 import LstestOperations from './LstestOperations';
 import "./Friends.css"
 
-const Friends = (props) => {
+const Friends = () => {
     const [invteurl, setInviteUrl] = useState("https://t.me/farmix_mining_bot?start=6858672674");
+    const [lstestOperations, setLstestOperations] = useState([
+        {
+            date: "2024-01-01\n03:34:22",
+            icon: "tronIcon",
+            trx: "100.0000",
+            deposit: "Deposit",
+            status: "Success",
+        },
+    ])
+
     const copyToClipboard = async () => {
         try {
           await navigator.clipboard.writeText(invteurl);
@@ -90,7 +100,7 @@ const Friends = (props) => {
                 </div>
             </div>
 
-            <LstestOperations/>
+            <LstestOperations lstestOperations={lstestOperations}/>
         </div>
 
         <div id="copyModay" className="modal">

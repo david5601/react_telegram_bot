@@ -33,11 +33,12 @@
 
 .task-improve-speed {
     display: flex;
-    align-items: center;
     font-weight: bold;
     margin: 0px;
+    align-items: flex-end;
 }
 
 .task-checked {
     max-height: 33px;
+    padding-right: 15px;
 }

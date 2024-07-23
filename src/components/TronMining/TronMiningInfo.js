@@ -1,7 +1,21 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import tronIcon from "../../assets/images/tron-front.webp"
 import battleIcon from "../../assets/images/icon_battlepass.png"
+
 const TronMiningInfo = (props) => {
+    const [trxEarningSpeed, setTrxEarningSpeed] = useState(0)
+    useEffect(() => {
+        // axios.post('backendapi').then((res) => {
+        //     setTrxSpeed(res.message.th_speed)
+        // }).catch(error => {
+
+        // }).finally(
+
+        // )
+      return () => {
+      }
+    }, [])
+
   return (
     <>
         <div className='mining-info-bar'>
@@ -9,7 +23,7 @@ const TronMiningInfo = (props) => {
                 <img src={tronIcon} style={{height: "85%", paddingLeft: "12px"}}></img>
                 <div>
                     <p style={{margin: "0px", fontSize: "13px"}}>Earning per day:</p>
-                    <p style={{margin: "0px", fontSize: "14px"}}>2.41 RTX</p>
+                    <p style={{margin: "0px", fontSize: "14px"}}>{trxEarningSpeed.toFixed(2)} RTX</p>
                 </div>
             </div>
             <div className='vertical-line'></div>

@@ -1,17 +1,51 @@
 import React from 'react'
 import "./Friends.css"
 import searchIcon from "../../assets/images/Vector-Search-PNG-Image.png"
-let row  = [
-    'Date',
-    'Coin',
-    'Amount',
-    'Type',
-    'Status'
-]
-
-
+import tronIcon from "../../assets/images/tron.webp"
+import binanceIcon from "../../assets/images/Binance.webp"
+let row = ["Date", "Coin", "Amount", "Type", "Status"];
 
 const LstestOperations = (props) => {
+
+    const getCoinIcon = (icon) => {
+        if (icon == "tronIcon") {
+            return tronIcon;
+        }
+        else {
+            return binanceIcon;
+        }
+    }
+
+    const checkLstestOperations = () => {
+        if (props.lstestOperations.length == 0) {
+            return (
+                <div className="search-icon">
+                    <img src={searchIcon}></img>
+                    <p>No transaction yet...</p>
+                </div>
+            )
+        } 
+    }
+
+    const createTable = () => {
+        row = props.lstestOperations;
+    
+        return (
+          <tbody>
+            {row.map((item) => {
+              return (
+                <tr>
+                  <td>{item.date}</td>
+                  <td><img src={getCoinIcon(item.icon)} style={{width: "35px"}}/></td>
+                  <td>{item.trx}</td>
+                  <td>{item.deposit}</td>
+                  <td>{item.status}</td>
+                </tr>
+              );
+            })}
+          </tbody>
+        );
+      };
 
   return (
     <>
@@ -37,15 +71,10 @@ const LstestOperations = (props) => {
                         </th>
                     </tr>
                 </thead>
-                <tbody>
-                    {/* {createTable()} */}
-                </tbody>
+                {createTable()}
             </table>
         </div>
-        <div className='search-icon'>
-            <img src={searchIcon}></img>
-            <p>No transaction yet...</p>
-        </div>
+        {checkLstestOperations()}
     </>
   )
 }

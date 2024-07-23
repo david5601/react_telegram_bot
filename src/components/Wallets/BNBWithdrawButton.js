@@ -11,7 +11,7 @@ const BNBWithdrawButton = (props) => {
                 <img src={binanceIcon} style={{maxHeight:"55px"}}></img>
                 <div>
                     <p style={{fontSize: "14px", padding: "0px", margin: "0px"}}>BNB Balance:</p>
-                    <p style={{fontSize: "19px", fontWeight: "700", padding: "0px", margin: "0px"}}>5.0352 BNB</p>
+                    <p style={{fontSize: "19px", fontWeight: "700", padding: "0px", margin: "0px"}}>{props.bnbBalance} BNB</p>
                 </div>
                 
             </div>

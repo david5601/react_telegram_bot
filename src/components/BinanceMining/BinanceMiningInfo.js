@@ -1,8 +1,21 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import bnbIcon from "../../assets/images/bnb-front.webp"
 import battleIcon from "../../assets/images/icon_battlepass.png"
 
 const BinanceMiningInfo = (props) => {
+    const [bnbEarningSpeed, setBNBEarningSpeed] = useState(0)
+
+    useEffect(() => {
+        // axios.post('backendapi').then((res) => {
+        //     setTrxSpeed(res.message.th_speed)
+        // }).catch(error => {
+
+        // }).finally(
+
+        // )
+      return () => {
+      }
+    }, [])
   return (
     <>
         <div className='mining-info-bar'>
@@ -10,7 +23,7 @@ const BinanceMiningInfo = (props) => {
                 <img src={bnbIcon} style={{maxHeight: "40px", paddingLeft: "12px", paddingRight: "10px"}}></img>
                 <div>
                     <p style={{margin: "0px", fontSize: "13px"}}>Earning per day:</p>
-                    <p style={{margin: "0px", fontSize: "14px"}}>2.41 RTX</p>
+                    <p style={{margin: "0px", fontSize: "14px"}}>{bnbEarningSpeed.toFixed(2)} RTX</p>
                 </div>
             </div>
             <div className='vertical-line'></div>

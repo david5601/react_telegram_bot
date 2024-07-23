@@ -1,22 +1,39 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import TronMiningInfo from './TronMiningInfo'
 import tronIcon from "../../assets/images/tron-front.webp"
 import coinMining from "../../assets/images/coin-mining.png"
 import videoTron from "../../assets/images/miner-2.mp4"
 import "./TronMining.css"
-const TronMining = (props) => {
-    const playRateControl = () => {
-        document.querySelector('video').playbackRate = 100.0;
-    }
+
+const TronMining = () => {
+    const [trxValue, setTrxValue] = useState(0);
+    const [trxSpeed, setTrxSpeed] = useState(50);
+    const [trxEarningSpeed, setTrxEarningSpeed] = useState(0)
+
+    useEffect(() => {
+        // axios.post('backendapi').then((res) => {
+        //     setTrxSpeed(res.message.th_speed)
+        // }).catch(error => {
+
+        // }).finally(
+
+        // )
+        setInterval(() => {
+            setTrxValue(prev => prev + trxSpeed)
+        }, 1000);
+      return () => {
+      }
+    }, [])
+    
   return (
     <>
         <div className='tron-mining-state'>
             <div style={{display:"flex", alignItems: "center", flexDirection: "column"}}>
                 <div className='tron-value'>
                     <img src={tronIcon} style={{maxHeight:"55px"}}></img>
-                    <p style={{fontSize: "25px", fontWeight: "700", padding: "0px", margin: "0px"}}>5.03522525 TRX</p>
+                    <p style={{fontSize: "25px", fontWeight: "700", padding: "0px", margin: "0px"}}>{trxValue.toFixed(8)} TRX</p>
                 </div>
-                <p style={{fontSize: "14px", padding: "0px", margin: "0px"}}>⚡ 150.00TH/s</p>
+                <p style={{fontSize: "14px", padding: "0px", margin: "0px"}}>⚡ {trxSpeed.toFixed(2)}TH/s</p>
                 
             </div>
             <div style={{paddingTop: "10px", display: "flex"}}>
