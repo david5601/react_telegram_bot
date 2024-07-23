@@ -119,7 +119,7 @@ body {
 }
 
 .btn3d.btn-primary {
-	box-shadow: 0 0 0 1px #4574DF inset, 0 0 0 2px rgb(245 245 245 / 0%) inset, 0 8px 0 0 #01275d, 0 8px 8px 1px rgba(0, 0, 0, 0.5);
+	box-shadow: 0 0 0 1px #4574DF inset, 0 0 0 2px rgb(245 245 245 / 0%) inset, 0 6px 0 0 #01275d, 0 6px 6px 1px rgba(0, 0, 0, 0.5);
 	background-color: #4574DF;
     font-size: 14px;
     font-weight: 500;
@@ -135,7 +135,7 @@ body {
 }
 
 .btn3d.btn-danger {
-  box-shadow: 0 0 0 1px #db214d inset, 0 0 0 2px rgba(255, 255, 255, 0) inset, 0 8px 0 0 #811635, 0 8px 8px 1px rgba(0, 0, 0, 0);
+  box-shadow: 0 0 0 1px #db214d inset, 0 0 0 2px rgba(255, 255, 255, 0) inset, 0 6px 0 0 #811635, 0 6px 6px 1px rgba(0, 0, 0, 0);
   background-color: #db214d;
   font-size: 14px;
   font-weight: 600;

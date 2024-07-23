@@ -13,8 +13,8 @@ const TronWithdraw = (props) => {
         <img src={tronIcon} style={{width: "10%"}}></img>
         {/* <input>0</input> */}
       </div>
-      <div className='coin-withdraw-amount'>
-
+      <div className='coin-withdraw-address'>
+        
       </div>
       <div className='coin-withdraw-button'>
         <button className='btn3d btn-primary'>Withdraws</button>

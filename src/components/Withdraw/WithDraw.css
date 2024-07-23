@@ -1,6 +1,6 @@
 .coin-withdraw-amount {
     background-color: #161629;
-    height: 45px;
+    height: 42px;
     border-radius: 99px;
     margin-top: 30px;
     display: flex;
@@ -8,7 +8,18 @@
     justify-content: flex-start;
     flex-direction: row;
     padding-left: 10px;
-    
+}
+
+.coin-withdraw-address {
+    background-color: #161629;
+    height: 42px;
+    border-radius: 99px;
+    margin-top: 10px;
+    padding-left: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: row;
 }
 
 .coin-img {
@@ -23,6 +34,7 @@
 .coin-withdraw-button {
     display: flex;
     justify-content: center;
+    padding-top: 5px
     
 }
 
