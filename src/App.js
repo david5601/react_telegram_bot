@@ -11,49 +11,84 @@ import TronMining from "./components/TronMining/TronMining";
 import BinanceMining from "./components/BinanceMining/BinanceMining";
 import TronWithdraw from "./components/Withdraw/TronWithdraw";
 import BinanceWithdraw from "./components/Withdraw/BinanceWithdraw";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes, useLocation } from "react-router-dom";
 import axios from 'axios'
 
-function App() {
-  const [userID, setUserID] = useState([]);
+const useQuery = () => {
+  return new URLSearchParams(useLocation().search);
+};
+
+const App = () => {
+  return (
+    <Router>
+      <MainApp />
+    </Router>
+  );
+};
+
+const MainApp = () => {
+  const query = useQuery();
+  const id = query.get('userID');
+  const userName = query.get('userName');
+
   const dispatch = useDispatch();
   const accountID = useSelector(state => state.account.accountID);
 
   useEffect(() => {
-    const fetchUserID = async () => {
-      try {
-        const response = await axios.get("https://api.refgetaway.net/telegram/api/userid")
-        setUserID(response.data);
-      } catch (error) {
-        console.error('Error fetching user ID:', error);
-      }
-    };
-
-    fetchUserID();
-  }, []);
-
-  const handleSetAccountId = (id) => {
-    dispatch(setAccountId(id));
-  }
-
+    if (id) {
+      dispatch(setAccountId(id));
+    }
+  }, [id, dispatch]);
 
   return (
-    <Router>
-      <div className="App">
-        <Routes>
-          <Route exact path="/" element={<Welcome name={userID}/>}></Route>
-          <Route path="/wallets" element={<Wallets/>}></Route>
-          <Route path="/friends" element={<Friends/>}></Route>
-          <Route path="/tasks" element={<Tasks/>}></Route>
-          <Route path="/tron_mining" element={<TronMining/>}></Route>
-          <Route path="/binance_mining" element={<BinanceMining/>}></Route>
-          <Route path="/tron_withdraw" element={<TronWithdraw/>}></Route>
-          <Route path="/binance_withdraw" element={<BinanceWithdraw/>}></Route>
-        </Routes>
-        <ToolBar />
-      </div>
-    </Router>
+    <div className="App">
+      <Routes>
+        <Route exact path="/" element={<Welcome name={id}/>}></Route>
+        <Route path="/wallets" element={<Wallets/>}></Route>
+        <Route path="/friends" element={<Friends/>}></Route>
+        <Route path="/tasks" element={<Tasks/>}></Route>
+        <Route path="/tron_mining" element={<TronMining/>}></Route>
+        <Route path="/binance_mining" element={<BinanceMining/>}></Route>
+        <Route path="/tron_withdraw" element={<TronWithdraw/>}></Route>
+        <Route path="/binance_withdraw" element={<BinanceWithdraw/>}></Route>
+      </Routes>
+      <ToolBar />
+    </div>
   );
-}
+};
+
+// function App() {
+//   const query = useQuery();
+//   const id = query.get('userID');
+//   const userName = query.get('userName');
+
+//   const [userID, setUserID] = useState([]);
+//   const dispatch = useDispatch();
+//   const accountID = useSelector(state => state.account.accountID);
+
+//   useEffect(() => {
+//     if (id) {
+//       dispatch(setAccountId(id));
+//     }
+//   }, [id, dispatch]);
+
+//   return (
+//     <Router>
+//       <div className="App">
+//         <Routes>
+//           <Route exact path="/" element={<Welcome name={userID}/>}></Route>
+//           <Route path="/wallets" element={<Wallets/>}></Route>
+//           <Route path="/friends" element={<Friends/>}></Route>
+//           <Route path="/tasks" element={<Tasks/>}></Route>
+//           <Route path="/tron_mining" element={<TronMining/>}></Route>
+//           <Route path="/binance_mining" element={<BinanceMining/>}></Route>
+//           <Route path="/tron_withdraw" element={<TronWithdraw/>}></Route>
+//           <Route path="/binance_withdraw" element={<BinanceWithdraw/>}></Route>
+//         </Routes>
+//         <ToolBar />
+//       </div>
+//     </Router>
+//   );
+// }
 
 export default App;
