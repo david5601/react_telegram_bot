@@ -43,7 +43,7 @@ const MainApp = () => {
   return (
     <div className="App">
       <Routes>
-        <Route exact path="/" element={<Welcome name={id}/>}></Route>
+        <Route exact path="/" element={<Welcome name={userName}/>}></Route>
         <Route path="/wallets" element={<Wallets/>}></Route>
         <Route path="/friends" element={<Friends/>}></Route>
         <Route path="/tasks" element={<Tasks/>}></Route>
