@@ -1,9 +1,12 @@
 import {useEffect, useState} from 'react'
 import LstestOperations from './LstestOperations';
+import { useSelector } from 'react-redux';
+import { selectAccountId } from '../../selectors/accountSelectors'
 import "./Friends.css"
 
 const Friends = () => {
-    const [invteurl, setInviteUrl] = useState("https://t.me/farmix_mining_bot?start=6858672674");
+    const accountID = useSelector(selectAccountId);
+    const [invteurl, setInviteUrl] = useState([]);
     const [lstestOperations, setLstestOperations] = useState([
         {
             date: "2024-01-01\n03:34:22",
@@ -21,6 +24,10 @@ const Friends = () => {
             console.log(err)
         }
     }
+
+    useEffect(() => {
+        setInviteUrl(`https://t.me/farmix_mining_bot?start=${accountID}`)
+    }, [])
 
     return (
     <>

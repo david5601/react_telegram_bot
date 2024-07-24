@@ -9,7 +9,7 @@ const TronWithdraw = (props) => {
   return (
     <>
       <div>
-        <h1 style={{marginBottom: "5px"}}>Withdraw: {accountID}</h1>
+        <h1 style={{marginBottom: "5px"}}>Withdraw</h1>
         <p style={{fontSize: "13px", margin: "0px"}}>This amount will be sent to the TRON compatible wallet address</p>
       </div>
       <div className='coin-withdraw-amount'>
