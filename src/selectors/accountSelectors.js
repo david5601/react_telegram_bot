@@ -1,0 +1,1 @@
+export const selectAccountId = state => state.account.accountID;

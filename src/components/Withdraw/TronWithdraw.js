@@ -1,12 +1,15 @@
 import React from 'react'
 import tronIcon from "../../assets/images/tron.webp"
+import { useSelector } from 'react-redux';
+import { selectAccountId } from '../../selectors/accountSelectors'
 import "./WithDraw.css"
 
 const TronWithdraw = (props) => {
+  const accountID = useSelector(selectAccountId);
   return (
     <>
       <div>
-        <h1 style={{marginBottom: "5px"}}>Withdraw</h1>
+        <h1 style={{marginBottom: "5px"}}>Withdraw: {accountID}</h1>
         <p style={{fontSize: "13px", margin: "0px"}}>This amount will be sent to the TRON compatible wallet address</p>
       </div>
       <div className='coin-withdraw-amount'>
