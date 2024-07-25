@@ -7,7 +7,7 @@ import "./BinanceMining.css"
 import { selectAccountId, selectTHSpeed, selectTrxRatio, selectTrxValue } from '../../selectors/accountSelectors'
 import { useSelector, useDispatch } from 'react-redux'
 import BigNumber from "bignumber.js";
-import axios from 'axios'
+// import axios from 'axios'
 import { setTHSpeed, setTrxRatio, setTrxValue } from '../../actions/accountActions'
 
 const BinanceMining = () => {
