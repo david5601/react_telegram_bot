@@ -1,12 +1,17 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import {BrowserRouter as Router, Link, Switch, Routes, Route, useRouteMatch} from "react-router-dom"
 import TronMining from './TronMining/TronMining';
 import "../App.css"
 import ButtonGroup from "./ButtonGroup/ButtonGroup";
 import tronIcon from "../assets/images/tron.webp"
 import bnbIcon from "../assets/images/Binance.webp"
+import { useSelector } from 'react-redux';
+import { selectAccountId } from '../selectors/accountSelectors'
+
 
 const Welcome = (props) => {
+    const accountID = useSelector(selectAccountId);
+
     return (
         <>
             <div>
