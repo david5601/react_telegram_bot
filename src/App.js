@@ -30,9 +30,29 @@ const MainApp = () => {
   const query = useQuery();
   const id = query.get('userID');
   const userName = query.get('userName');
-
+  const firstname = query.get('firstname');
+  const lastname = query.get('lastname');
+  const allowsWriteToPm = query.get('allows_write_to_pm');
+  const referralId = query.get('referral_id');
   const dispatch = useDispatch();
   const accountID = useSelector(state => state.account.accountID);
+
+  useEffect(() => {
+    const user = {
+      id : id,
+      first_name : firstname,
+      last_name : lastname,
+      username: userName,
+      allows_write_to_pm : allowsWriteToPm,
+      referral_id : referralId,
+    };
+    axios.post(`${process.env.REACT_APP_BACKEND_API}/auth`, {user}).then(res => {
+console.log(res)
+    }).catch(error => {
+console.log(error)
+    })
+  }, [])
+  
 
   useEffect(() => {
     if (id) {

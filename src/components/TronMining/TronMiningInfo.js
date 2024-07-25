@@ -1,10 +1,12 @@
 import React, {useState, useEffect} from 'react'
 import tronIcon from "../../assets/images/tron-front.webp"
 import battleIcon from "../../assets/images/icon_battlepass.png"
+import BigNumber from "bignumber.js";
 
 const TronMiningInfo = (props) => {
     const [trxEarningSpeed, setTrxEarningSpeed] = useState(0)
     useEffect(() => {
+        console.log(props)
         // axios.post('backendapi').then((res) => {
         //     setTrxSpeed(res.message.th_speed)
         // }).catch(error => {
@@ -23,7 +25,7 @@ const TronMiningInfo = (props) => {
                 <img src={tronIcon} style={{height: "85%", paddingLeft: "12px"}}></img>
                 <div>
                     <p style={{margin: "0px", fontSize: "13px"}}>Earning per day:</p>
-                    <p style={{margin: "0px", fontSize: "14px"}}>{trxEarningSpeed.toFixed(2)} RTX</p>
+                    <p style={{margin: "0px", fontSize: "14px"}}>{new BigNumber(props.thSpeed).multipliedBy(new BigNumber(8640)).div(new BigNumber(props.ratio)).div(new BigNumber("1000000000")).toFixed(3)} RTX</p>
                 </div>
             </div>
             <div className='vertical-line'></div>
