@@ -11,6 +11,7 @@ import TronMining from "./components/TronMining/TronMining";
 import BinanceMining from "./components/BinanceMining/BinanceMining";
 import TronWithdraw from "./components/Withdraw/TronWithdraw";
 import BinanceWithdraw from "./components/Withdraw/BinanceWithdraw";
+import Boost from "./components/Boost/Boost";
 import { BrowserRouter as Router, Route, Routes, useLocation } from "react-router-dom";
 import axios from 'axios'
 
@@ -51,6 +52,7 @@ const MainApp = () => {
         <Route path="/binance_mining" element={<BinanceMining/>}></Route>
         <Route path="/tron_withdraw" element={<TronWithdraw/>}></Route>
         <Route path="/binance_withdraw" element={<BinanceWithdraw/>}></Route>
+        <Route path="/boost" element={<Boost/>}></Route>
       </Routes>
       <ToolBar />
     </div>

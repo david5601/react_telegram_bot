@@ -3,6 +3,7 @@ import bnbIcon from "../../assets/images/bnb-front.webp"
 import coinMining from "../../assets/images/coin-mining.png"
 import videoTron from "../../assets/images/miner-2.mp4"
 import BinanceMiningInfo from './BinanceMiningInfo'
+import axios from 'axios'
 import "./BinanceMining.css"
 
 const BinanceMining = () => {

@@ -13,7 +13,8 @@ const Tasks = () => {
           return (
             <TaskElement icon={item.icon} title={item.title} bonus={item.bonus} during={item.during} state={item.state}/>
           )
-        })}
+          }
+        )}
       </div>
     )
   }
