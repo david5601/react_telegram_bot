@@ -9,6 +9,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import BigNumber from "bignumber.js";
 import axios from 'axios'
 import { setTHSpeed, setTrxRatio, setTrxValue } from '../../actions/accountActions'
+import { Link } from "react-router-dom";
 
 const TronMining = () => {
     const [trxValue, setValue] = useState();
@@ -69,12 +70,17 @@ const TronMining = () => {
 
                 </div>
                 <div style={{ paddingTop: "10px", display: "flex" }}>
-                    <button type='button' className='btn-danger btn3d boost-claim-btn'>
-                        Claim
-                    </button>
-                    <button type='button' className='btn-primary btn3d boost-claim-btn'>
-                        Boost &nbsp;<p style={{ margin: "0px", fontSize: "20px" }}>🚀</p>
-                    </button>
+                    <Link to="/tron_withdraw" className='boost-claim-link'>
+                        <button type='button' className='btn-danger btn3d boost-claim-btn'>
+                            Claim
+                        </button>
+                    </Link>
+                    
+                    <Link to="/boost" className='boost-claim-link'>
+                        <button type='button' className='btn-primary btn3d boost-claim-btn'>
+                            Boost &nbsp;<p style={{ margin: "0px", fontSize: "20px" }}>🚀</p>
+                        </button>
+                    </Link>
                 </div>
             </div>
             <div>

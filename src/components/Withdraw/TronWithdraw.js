@@ -6,11 +6,13 @@ import "./WithDraw.css"
 import BigNumber from 'bignumber.js';
 import axios from 'axios';
 const TronWithdraw = (props) => {
+  const [isVisible, setIsVisible] = useState(false);
   const accountID = useSelector(selectAccountId);
   const trxValue = useSelector(selectTrxValue);
   const [amount, setAmount] = useState(0)
   const [address, setAddress] = useState('')
   const handleWithdrawClick = () => {
+    showModal();
     if (new BigNumber(trxValue).gt(new BigNumber("999999999"))) {
       if (amount < 100 || address == '') {
         console.log("error")
@@ -39,6 +41,10 @@ const TronWithdraw = (props) => {
     }
   }
 
+  const showModal = () => {
+    setIsVisible(!isVisible);
+  }
+
   return (
     <>
       <div>
@@ -55,6 +61,11 @@ const TronWithdraw = (props) => {
       </div>
       <div className='coin-withdraw-button'>
         <button className='btn3d btn-primary' onClick={handleWithdrawClick}>Withdraws</button>
+      </div>
+
+      <div className='warning-alert' style={{display: isVisible ? 'block' : 'none'}}>
+          The wallet field is required.
+          The amount field is requried.
       </div>
     </>
   )

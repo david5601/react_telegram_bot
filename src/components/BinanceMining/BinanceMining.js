@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react'
 import bnbIcon from "../../assets/images/bnb-front.webp"
 import coinMining from "../../assets/images/coin-mining.png"
 import videoTron from "../../assets/images/miner-2.mp4"
+import { Link } from 'react-router-dom'
 import BinanceMiningInfo from './BinanceMiningInfo'
 import "./BinanceMining.css"
 import { selectAccountId, selectTHSpeed, selectTrxRatio, selectTrxValue } from '../../selectors/accountSelectors'
@@ -70,12 +71,16 @@ const BinanceMining = () => {
                 
             </div>
             <div style={{paddingTop: "10px", display: "flex"}}>
-                <button type='button' className='btn-danger btn3d boost-claim-btn'>
-                    Claim
-                </button>
-                <button type='button' className='btn-primary btn3d boost-claim-btn'>
-                    Boost &nbsp;<p style={{margin: "0px", fontSize: "20px"}}>🚀</p>
-                </button>
+                <Link to="/binance_withdraw" className='boost-claim-link'>
+                    <button type='button' className='btn-danger btn3d boost-claim-btn'>
+                        Claim
+                    </button>
+                </Link>
+                <Link to="/boost" className='boost-claim-link'>
+                    <button type='button' className='btn-primary btn3d boost-claim-btn'>
+                        Boost &nbsp;<p style={{margin: "0px", fontSize: "20px"}}>🚀</p>
+                    </button>    
+                </Link>
             </div>
         </div>
         <div>

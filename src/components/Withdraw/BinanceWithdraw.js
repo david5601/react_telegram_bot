@@ -7,14 +7,17 @@ import { selectAccountId, selectBNBValue } from '../../selectors/accountSelector
 import BigNumber from 'bignumber.js';
 
 const BinanceWithdraw = (props) => {
+  const [isVisible, setIsVisible] = useState(true);
   const accountID = useSelector(selectAccountId);
   const bnbValue = useSelector(selectBNBValue);
   const [amount, setAmount] = useState(0)
   const [address, setAddress] = useState('')
   const handleWithdrawClick = () => {
+    showModal();
     if (new BigNumber(bnbValue).gt(new BigNumber("999999999"))) {
       if (amount < 100 || address == '') {
         console.log("error")
+        
         return
       }
       const request = {
@@ -23,6 +26,7 @@ const BinanceWithdraw = (props) => {
         address,
         is_bnb: true
       }
+      
       axios.post(`${process.env.REACT_APP_BACKEND_API}/withdraw`, request).then((res) => {
         if (res.data.success === true) {
           console.log("object")
@@ -38,6 +42,10 @@ const BinanceWithdraw = (props) => {
       //implement here 
       console.log(bnbValue)
     }
+  }
+
+  const showModal = () => {
+    setIsVisible(!isVisible);
   }
 
   return (
@@ -56,6 +64,10 @@ const BinanceWithdraw = (props) => {
       </div>
       <div className='coin-withdraw-button'>
         <button className='btn3d btn-primary' onClick={handleWithdrawClick}>Withdraws</button>
+      </div>
+      <div className='warning-alert' style={{display: isVisible ? 'block' : 'none'}}>
+          The wallet field is required.
+          The amount field is requried.
       </div>
     </>
   )

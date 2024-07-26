@@ -13,6 +13,7 @@ import TronWithdraw from "./components/Withdraw/TronWithdraw";
 import BinanceWithdraw from "./components/Withdraw/BinanceWithdraw";
 import { BrowserRouter as Router, Route, Routes, useLocation } from "react-router-dom";
 import axios from 'axios'
+import Boost from "./components/Boost/Boost";
 
 const useQuery = () => {
   return new URLSearchParams(useLocation().search);
@@ -71,6 +72,7 @@ console.log(error)
         <Route path="/binance_mining" element={<BinanceMining/>}></Route>
         <Route path="/tron_withdraw" element={<TronWithdraw/>}></Route>
         <Route path="/binance_withdraw" element={<BinanceWithdraw/>}></Route>
+        <Route path="/boost" element={<Boost/>}></Route>
       </Routes>
       <ToolBar />
     </div>

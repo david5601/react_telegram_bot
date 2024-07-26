@@ -7,6 +7,7 @@ import axios from 'axios'
 
 const Friends = () => {
     const accountID = useSelector(selectAccountId);
+    const [isVisible, setIsVisible] = useState(true);
     const [invteurl, setInviteUrl] = useState([]);
     const [lstestOperations, setLstestOperations] = useState([
         {
@@ -21,9 +22,14 @@ const Friends = () => {
     const copyToClipboard = async () => {
         try {
             await navigator.clipboard.writeText(invteurl);
+            showModal()
         } catch (err) {
             console.log(err)
         }
+    }
+
+    const showModal = () => {
+        setIsVisible(!isVisible);
     }
 
     useEffect(() => {
@@ -121,19 +127,18 @@ const Friends = () => {
 
                 <LstestOperations lstestOperations={lstestOperations} />
             </div>
-
-            <div id="copyModay" className="modal">
+            <div id="copyModal" className="modal" style={{ display: isVisible ? 'none' : 'block' }}>
                 <div className="modal-content">
                     <div className="modal-header">
                         <span className="close">&times;</span>
-                        <h2>Farmix.biz</h2>
+                        <h2 style={{marginBottom: "5px", marginTop: "5px"}}>Farmix.biz</h2>
                     </div>
                     <div className="modal-body">
                         <p>Copied link: {invteurl}</p>
                     </div>
                     <div className="modal-footer">
                         <div style={{ display: "flex", flexDirection: "row-reverse" }}>
-                            <button className='btn-hover color-9'>
+                            <button className='btn-hover color-9' onClick={showModal}>
                                 OK
                             </button>
                         </div>

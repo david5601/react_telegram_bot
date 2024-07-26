@@ -151,3 +151,86 @@ body {
 box-shadow: 0 0 0 1px #db214d, 0 0 0 1px rgba(255, 255, 255, 0.15) inset, 0 1px 3px 1px rgba(0, 0, 0, 0.3);
 background-color: #db214d;
 }
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 230px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 5px;
+  border: 1px solid #888;
+  width: 95%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s;
+  border-radius: 10px;
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+  from {top:-300px; opacity:0} 
+  to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+  from {top:-300px; opacity:0}
+  to {top:0; opacity:1}
+}
+
+/* The Close Button */
+.close {
+  color: black;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+color: #000;
+text-decoration: none;
+cursor: pointer;
+}
+
+.modal-header {
+padding: 2px 16px;
+background-color: #ffffff;
+color: rgb(0, 0, 0);
+}
+
+.modal-body {
+  padding: 2px 16px;
+  color: black;
+}
+
+.modal-footer {
+padding: 2px 16px;
+background-color: rgb(249, 255, 249);
+color: rgb(0, 0, 0);
+font-size: 20px;
+}
+
+.warning-alert {
+  background-color: #d51706;
+  display: none;
+  color: white;
+  font-size: 15px;
+  padding: 10px;
+  border-radius: 5px;
+}
