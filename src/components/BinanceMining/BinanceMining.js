@@ -3,13 +3,12 @@ import bnbIcon from "../../assets/images/bnb-front.webp"
 import coinMining from "../../assets/images/coin-mining.png"
 import videoTron from "../../assets/images/miner-2.mp4"
 import BinanceMiningInfo from './BinanceMiningInfo'
-import axios from 'axios'
 import "./BinanceMining.css"
 import { selectAccountId, selectTHSpeed, selectTrxRatio, selectTrxValue } from '../../selectors/accountSelectors'
 import { useSelector, useDispatch } from 'react-redux'
 import BigNumber from "bignumber.js";
-// import axios from 'axios'
-import { setTHSpeed, setTrxRatio, setTrxValue } from '../../actions/accountActions'
+import axios from 'axios'
+import { setTHSpeed, setBNBRatio, setBNBValue } from '../../actions/accountActions'
 
 const BinanceMining = () => {
     const [bnbValue, setValue] = useState();
@@ -29,8 +28,8 @@ const BinanceMining = () => {
             console.log(res.data.message)
             if (res.data.success === true) {
                 dispatch(setTHSpeed(res.data.message.thSpeed));
-                dispatch(setTrxRatio(res.data.message.ratio));
-                dispatch(setTrxValue(res.data.message.balance));
+                dispatch(setBNBRatio(res.data.message.ratio));
+                dispatch(setBNBValue(res.data.message.balance));
 
                 setBNBSpeed(res.data.message.thSpeed);
                 setValue(res.data.message.balance);

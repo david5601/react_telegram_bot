@@ -32,9 +32,9 @@ const LstestOperations = (props) => {
     
         return (
           <tbody>
-            {row.map((item) => {
+            {row.map((item, key) => {
               return (
-                <tr>
+                <tr key={key}>
                   <td>{item.date}</td>
                   <td><img src={getCoinIcon(item.icon)} style={{width: "35px"}}/></td>
                   <td>{item.trx}</td>

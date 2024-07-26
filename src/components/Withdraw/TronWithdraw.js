@@ -1,11 +1,44 @@
-import React from 'react'
+import React, { useState } from 'react'
 import tronIcon from "../../assets/images/tron.webp"
 import { useSelector } from 'react-redux';
-import { selectAccountId } from '../../selectors/accountSelectors'
+import { selectAccountId, selectTrxValue } from '../../selectors/accountSelectors'
 import "./WithDraw.css"
-
+import BigNumber from 'bignumber.js';
+import axios from 'axios';
 const TronWithdraw = (props) => {
   const accountID = useSelector(selectAccountId);
+  const trxValue = useSelector(selectTrxValue);
+  const [amount, setAmount] = useState(0)
+  const [address, setAddress] = useState('')
+  const handleWithdrawClick = () => {
+    if (new BigNumber(trxValue).gt(new BigNumber("999999999"))) {
+      if (amount < 100 || address == '') {
+        console.log("error")
+        return
+      }
+      const request = {
+        id: accountID,
+        amount: new BigNumber(amount).multipliedBy(new BigNumber('1000000000')).toString(),
+        address,
+        is_bnb: false
+      }
+      axios.post(`${process.env.REACT_APP_BACKEND_API}/withdraw`, request).then((res) => {
+        if (res.data.success === true) {
+          console.log("object")
+
+        }
+      }).catch(error => {
+
+      }).finally(
+
+      )
+
+    } else {
+      //implement here 
+      console.log(trxValue)
+    }
+  }
+
   return (
     <>
       <div>
@@ -14,14 +47,14 @@ const TronWithdraw = (props) => {
       </div>
       <div className='coin-withdraw-amount'>
         <img src={tronIcon} style={{width: "35px"}}></img>
-        <input id='coin_amount' type='text' placeholder='0'></input>
+        <input id='coin_amount' placeholder='0' type='number' value={amount} onChange={(e) => setAmount(e.target.value)}></input>
         <p style={{paddingLeft: "10px", paddingRight: "20px"}}>TRX</p>
       </div>
       <div className='coin-withdraw-address'>
-        <input id='wallet_address' type='text' placeholder='Your TRX Adress'></input>
+        <input id='wallet_address' type='text' placeholder='Your TRX Adress' value={address} onChange={(e) => setAddress(e.target.value)}></input>
       </div>
       <div className='coin-withdraw-button'>
-        <button className='btn3d btn-primary'>Withdraws</button>
+        <button className='btn3d btn-primary' onClick={handleWithdrawClick}>Withdraws</button>
       </div>
     </>
   )

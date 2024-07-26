@@ -3,12 +3,11 @@ import TronMiningInfo from './TronMiningInfo'
 import tronIcon from "../../assets/images/tron-front.webp"
 import coinMining from "../../assets/images/coin-mining.png"
 import videoTron from "../../assets/images/miner-2.mp4"
-import axios from 'axios'
 import "./TronMining.css"
 import { selectAccountId, selectTHSpeed, selectTrxRatio, selectTrxValue } from '../../selectors/accountSelectors'
 import { useSelector, useDispatch } from 'react-redux'
 import BigNumber from "bignumber.js";
-// import axios from 'axios'
+import axios from 'axios'
 import { setTHSpeed, setTrxRatio, setTrxValue } from '../../actions/accountActions'
 
 const TronMining = () => {
