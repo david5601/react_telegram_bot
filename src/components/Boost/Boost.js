@@ -76,7 +76,7 @@ const Boost = () => {
                 {!isButtonVisible && (
                     <>
                         <div className='wallet-address' onClick={copyToClipboard}>
-                            {walletAddress}
+                            <p>{walletAddress}</p>
                         </div>
                         <p className='wallet-address-copy'>Click on the wallet to copy</p>
                     </>
