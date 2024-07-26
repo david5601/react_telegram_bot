@@ -6,16 +6,16 @@ import ButtonGroup from "./ButtonGroup/ButtonGroup";
 import tronIcon from "../assets/images/tron.webp"
 import bnbIcon from "../assets/images/Binance.webp"
 import { useSelector } from 'react-redux';
-import { selectAccountId } from '../selectors/accountSelectors'
+import { selectAccountId, selectAccountUsername } from '../selectors/accountSelectors'
 
 
 const Welcome = (props) => {
     const accountID = useSelector(selectAccountId);
-
+    const accountUserName = useSelector(selectAccountUsername);
     return (
         <>
             <div>
-                <h2 className='title'>Hi, {props.name}!</h2>
+                <h2 className='title'>Hi, {accountUserName}!</h2>
             </div>
             <div>
                 <h1 style={{paddingBottom: "10px", fontWeight:"600", fontSize:"1.9em"}}>

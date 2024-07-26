@@ -5,9 +5,9 @@ export const setAccountId = (accoutID) => ({
     payload: accoutID,
 });
 
-export const setAccountUsername = (accoutUserName) => ({
+export const setAccountUsername = (accountUserName) => ({
     type: SET_ACCOUNT_USERNAME,
-    payload: accoutUserName,
+    payload: accountUserName,
 });
 
 export const setRefferalID = (referralID) => ({

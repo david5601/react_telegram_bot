@@ -1,7 +1,9 @@
-import { SET_ACCOUNT_ID, SET_TH_SPEED, SET_TRX_RATIO, SET_TRX_VALUE, SET_BNB_RATIO, SET_BNB_VALUE, SET_IS_BNB } from "../actions/actionTypes";
+import { SET_ACCOUNT_ID, SET_ACCOUNT_USERNAME, SET_REFERRAL_ID, SET_TH_SPEED, SET_TRX_RATIO, SET_TRX_VALUE, SET_BNB_RATIO, SET_BNB_VALUE, SET_IS_BNB } from "../actions/actionTypes";
 
 const initialState = {
     accountID: null,
+    accountUsername: null,
+    referralID: null,
     thSpeed: null,
     trxRatio: null,
     trxValue: null,
@@ -17,6 +19,19 @@ const accountReducer = (state = initialState, action) => {
                 ...state,
                 accountID: action.payload,
             };
+            
+        case SET_ACCOUNT_USERNAME:
+            return {
+                ...state,
+                accountUsername: action.payload,
+            };
+
+        case SET_REFERRAL_ID:
+            return {
+                ...state,
+                referralID: action.payload,
+            };
+
         case SET_TH_SPEED:
             return {
                 ...state,

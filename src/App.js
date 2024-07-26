@@ -38,6 +38,7 @@ const MainApp = () => {
   const dispatch = useDispatch();
   const accountID = useSelector(state => state.account.accountID);
   const accountUsername = useSelector(state => state.account.accountUsername);
+  console.log(query)
 
   useEffect(() => {
     const user = {
@@ -57,21 +58,19 @@ const MainApp = () => {
   
 
   useEffect(() => {
+    console.log({id, userName})
     if (id) {
       dispatch(setAccountId(id));
     }
-  }, [id, dispatch]);
-
-  useEffect(() => {
     if (userName) {
       dispatch(setAccountUsername(userName));
     }
-  }, [userName, dispatch]);
+  }, [id, userName, dispatch]);
 
   return (
     <div className="App">
       <Routes>
-        <Route exact path="/" element={<Welcome name={userName}/>}></Route>
+        <Route exact path="/" element={<Welcome />}></Route>
         <Route path="/wallets" element={<Wallets/>}></Route>
         <Route path="/friends" element={<Friends/>}></Route>
         <Route path="/tasks" element={<Tasks/>}></Route>
