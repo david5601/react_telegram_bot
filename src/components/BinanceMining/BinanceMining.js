@@ -76,7 +76,7 @@ const BinanceMining = () => {
                         Claim
                     </button>
                 </Link>
-                <Link to="/boost" className='boost-claim-link'>
+                <Link to="/boost?is_bnb=true" className='boost-claim-link'>
                     <button type='button' className='btn-primary btn3d boost-claim-btn'>
                         Boost &nbsp;<p style={{margin: "0px", fontSize: "20px"}}>🚀</p>
                     </button>    

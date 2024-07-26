@@ -1,4 +1,4 @@
-import { SET_ACCOUNT_ID, SET_TH_SPEED, SET_TRX_RATIO, SET_TRX_VALUE, SET_BNB_RATIO, SET_BNB_VALUE } from "./actionTypes";
+import { SET_ACCOUNT_ID, SET_TH_SPEED, SET_TRX_RATIO, SET_TRX_VALUE, SET_BNB_RATIO, SET_BNB_VALUE, SET_IS_BNB } from "./actionTypes";
 
 export const setAccountId = (accoutID) => ({
     type: SET_ACCOUNT_ID,
@@ -31,4 +31,9 @@ export const setBNBValue = (bnbValue) => ({
 export const setBNBRatio = (ratio) => ({
     type: SET_BNB_RATIO,
     payload: ratio,
+})
+
+export const setIsBnb = (isBnb) => ({
+    type: SET_IS_BNB,
+    payload: isBnb,
 })

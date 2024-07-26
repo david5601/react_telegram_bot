@@ -4,3 +4,4 @@ export const SET_TRX_RATIO = 'SET_TRX_RATIO';
 export const SET_TRX_VALUE = 'SET_TRX_VALUE';
 export const SET_BNB_RATIO = 'SET_BNB_RATIO';
 export const SET_BNB_VALUE = 'SET_BNB_VALUE';
+export const SET_IS_BNB = 'SET_IS_BNB';

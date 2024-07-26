@@ -3,12 +3,13 @@ import "./Friends.css"
 import searchIcon from "../../assets/images/Vector-Search-PNG-Image.png"
 import tronIcon from "../../assets/images/tron.webp"
 import binanceIcon from "../../assets/images/Binance.webp"
+import BigNumber from 'bignumber.js'
 let row = ["Date", "Coin", "Amount", "Type", "Status"];
 
 const LstestOperations = (props) => {
 
     const getCoinIcon = (icon) => {
-        if (icon == "tronIcon") {
+        if (icon == 0) {
             return tronIcon;
         }
         else {
@@ -17,7 +18,7 @@ const LstestOperations = (props) => {
     }
 
     const checkLstestOperations = () => {
-        if (props.lstestOperations.length == 0) {
+        if (props.lstestOperations?.length == 0) {
             return (
                 <div className="search-icon">
                     <img src={searchIcon}></img>
@@ -26,20 +27,39 @@ const LstestOperations = (props) => {
             )
         } 
     }
-
+    const formatDateString = (dateStr) => {
+        // Create a Date object
+        const date = new Date(dateStr);
+        
+        // Format the date parts
+        const year = date.getUTCFullYear();
+        const month = String(date.getUTCMonth() + 1).padStart(2, '0'); // Months are 0-based, so add 1
+        const day = String(date.getUTCDate()).padStart(2, '0');
+        
+        // Format the time parts
+        const hours = String(date.getUTCHours()).padStart(2, '0');
+        const minutes = String(date.getUTCMinutes()).padStart(2, '0');
+        const seconds = String(date.getUTCSeconds()).padStart(2, '0');
+        
+        // Combine the date and time parts
+        const formattedDate = `${year}-${month}-${day}\n ${hours}:${minutes}:${seconds}`;
+        
+        return formattedDate;
+    }
+    
     const createTable = () => {
         row = props.lstestOperations;
     
         return (
           <tbody>
-            {row.map((item, key) => {
+            {row?.map((item, key) => {
               return (
                 <tr key={key}>
-                  <td>{item.date}</td>
-                  <td><img src={getCoinIcon(item.icon)} style={{width: "35px"}}/></td>
-                  <td>{item.trx}</td>
-                  <td>{item.deposit}</td>
-                  <td>{item.status}</td>
+                  <td>{formatDateString(item.created_at)}</td>
+                  <td><img src={getCoinIcon(item.token_type)} style={{width: "35px"}}/></td>
+                  <td>{new BigNumber(item.amount).div(new BigNumber("1000000000")).toString()}</td>
+                  <td>{item.status ? 'deposit' : 'withdraw'}</td>
+                  <td>{'success'}</td>
                 </tr>
               );
             })}

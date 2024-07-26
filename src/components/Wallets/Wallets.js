@@ -8,21 +8,14 @@ import axios from 'axios'
 import BigNumber from "bignumber.js";
 import "./Wallets.css";
 import { setBNBRatio, setTHSpeed, setTrxRatio, setTrxValue } from "../../actions/accountActions";
+import LstestOperations from "../Friends/LstestOperations";
 const Wallets = () => {
   const dispatch = useDispatch();
   const [tronBalance, setTronBalance] = useState(0);
   const [bnbBalance, setBNBBalance] = useState(0);
   const [allChanged, setAllChanged] = useState(false);
 
-  const [transactionHistory, setTransactionHistory] = useState([
-    {
-      date: "2024-01-01\n03:34:22",
-      icon: "tronIcon",
-      trx: "100.0000",
-      deposit: "Deposit",
-      status: "Success",
-    },
-  ]);
+  const [transactionHistory, setTransactionHistory] = useState([]);
   const accountID = useSelector(selectAccountId);
 
   useEffect(() => {
@@ -56,13 +49,22 @@ const Wallets = () => {
     )
     axios.get(`${process.env.REACT_APP_BACKEND_API}/transaction/${accountID}`).then((res) => {
       console.log(res.data.message)
-      
+
     }).catch(error => {
 
     }).finally(
 
     )
+    axios.get(`${process.env.REACT_APP_BACKEND_API}/transaction/${accountID}`).then((res) => {
+      if (res.data.success === true) {
+        console.log("object")
+        setTransactionHistory(res.data.message)
+      }
+    }).catch(error => {
 
+    }).finally(
+
+    )
   }, [accountID])
 
 
@@ -73,7 +75,9 @@ const Wallets = () => {
           <div className="wallet-section__inner">
             <TronWithdrawButton tronBalance={new BigNumber(tronBalance).div(new BigNumber("1000000000")).toFixed(4)} />
             <BNBWithdrawButton bnbBalance={new BigNumber(bnbBalance).div(new BigNumber("1000000000")).toFixed(4)} />
-            <WalletTransactionHistory transactionHistory={transactionHistory} />
+            {/* <WalletTransactionHistory transactionHistory={transactionHistory} /> */}
+            <LstestOperations lstestOperations={transactionHistory} />
+
           </div>
         </div>
       </div>

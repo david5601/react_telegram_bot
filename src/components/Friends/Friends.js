@@ -9,15 +9,7 @@ const Friends = () => {
     const accountID = useSelector(selectAccountId);
     const [isVisible, setIsVisible] = useState(true);
     const [invteurl, setInviteUrl] = useState([]);
-    const [lstestOperations, setLstestOperations] = useState([
-        {
-            date: "2024-01-01\n03:34:22",
-            icon: "tronIcon",
-            trx: "100.0000",
-            deposit: "Deposit",
-            status: "Success",
-        },
-    ])
+    const [lstestOperations, setLstestOperations] = useState()
 
     const copyToClipboard = async () => {
         try {
