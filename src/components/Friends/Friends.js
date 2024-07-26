@@ -1,12 +1,14 @@
 import { useEffect, useState } from 'react'
 import LstestOperations from './LstestOperations';
 import { useSelector } from 'react-redux';
-import { selectAccountId } from '../../selectors/accountSelectors'
+import { selectAccountId, selectAccountUsername } from '../../selectors/accountSelectors';
 import "./Friends.css"
 import axios from 'axios'
 
 const Friends = () => {
     const accountID = useSelector(selectAccountId);
+    const accountUsername = useSelector(selectAccountUsername);
+
     const [isVisible, setIsVisible] = useState(true);
     const [invteurl, setInviteUrl] = useState([]);
     const [lstestOperations, setLstestOperations] = useState()

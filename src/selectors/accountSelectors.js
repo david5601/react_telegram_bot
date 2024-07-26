@@ -1,4 +1,6 @@
 export const selectAccountId = state => state.account.accountID;
+export const selectAccountUsername = state => state.account.accountUsername;
+export const selectReferralID = state => state.account.referralID;
 export const selectTHSpeed = state => state.account.thSpeed;
 export const selectTrxRatio = state => state.account.trxRatio;
 export const selectTrxValue = state => state.account.trxValue;

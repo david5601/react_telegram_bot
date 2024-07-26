@@ -1,7 +1,8 @@
 import "./App.css";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from 'react-redux';
-import { setAccountId } from "./actions/accountActions";
+import { setAccountId, setAccountUsername } from "./actions/accountActions";
+import { selectAccountId, selectAccountUsername } from './selectors/accountSelectors';
 import Welcome from "./components/Welcome";
 import ToolBar from "./components/ToolBar/ToolBar";
 import Wallets from "./components/Wallets/Wallets";
@@ -37,8 +38,10 @@ const MainApp = () => {
   const referralId = query.get('referral_id');
   const dispatch = useDispatch();
   const accountID = useSelector(state => state.account.accountID);
+  const accountUsername = useSelector(selectAccountUsername);
 
   useEffect(() => {
+    userName = accountUsername;
     const user = {
       id : id,
       first_name : firstname,
@@ -52,7 +55,7 @@ console.log(res)
     }).catch(error => {
 console.log(error)
     })
-  }, [])
+  }, [accountUsername])
   
 
   useEffect(() => {
