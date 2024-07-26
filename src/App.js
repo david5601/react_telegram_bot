@@ -2,7 +2,6 @@ import "./App.css";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from 'react-redux';
 import { setAccountId, setAccountUsername } from "./actions/accountActions";
-import { selectAccountId, selectAccountUsername } from './selectors/accountSelectors';
 import Welcome from "./components/Welcome";
 import ToolBar from "./components/ToolBar/ToolBar";
 import Wallets from "./components/Wallets/Wallets";
@@ -38,7 +37,7 @@ const MainApp = () => {
   const referralId = query.get('referral_id');
   const dispatch = useDispatch();
   const accountID = useSelector(state => state.account.accountID);
-  const accountUsername = useSelector(selectAccountUsername);
+  const accountUsername = useSelector(state => state.account.accountUsername);
 
   useEffect(() => {
     const user = {
@@ -50,9 +49,9 @@ const MainApp = () => {
       referral_id : referralId,
     };
     axios.post(`${process.env.REACT_APP_BACKEND_API}/auth`, {user}).then(res => {
-console.log(res)
+    console.log(res)
     }).catch(error => {
-console.log(error)
+    console.log(error)
     })
   }, [])
   
@@ -65,7 +64,7 @@ console.log(error)
 
   useEffect(() => {
     if (userName) {
-      dispatch(setAccountId(userName));
+      dispatch(setAccountUsername(userName));
     }
   }, [userName, dispatch]);
 
