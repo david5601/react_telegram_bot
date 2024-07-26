@@ -41,7 +41,6 @@ const MainApp = () => {
   const accountUsername = useSelector(selectAccountUsername);
 
   useEffect(() => {
-    userName = accountUsername;
     const user = {
       id : id,
       first_name : firstname,
@@ -55,7 +54,7 @@ console.log(res)
     }).catch(error => {
 console.log(error)
     })
-  }, [accountUsername])
+  }, [])
   
 
   useEffect(() => {
@@ -63,6 +62,12 @@ console.log(error)
       dispatch(setAccountId(id));
     }
   }, [id, dispatch]);
+
+  useEffect(() => {
+    if (userName) {
+      dispatch(setAccountId(userName));
+    }
+  }, [userName, dispatch]);
 
   return (
     <div className="App">
