@@ -85,8 +85,8 @@ const BinanceMining = () => {
         </div>
         <div>
             {/* <img src={coinMining} style={{width: "100%"}}></img> */}
-            <video autoPlay controls loop>
-                <source src={videoTron} type="video/mp4"/>
+            <video autoPlay loop muted poster="/assets/image/poster.png">
+                <source src="/assets/image/miner-2.mp4" type="video/mp4" />
             </video>
         </div>
         <BinanceMiningInfo thSpeed={bnbSpeed} ratio={ratio}/>

@@ -85,7 +85,7 @@ const TronMining = () => {
             </div>
             <div>
                 {/* <img src={coinMining} style={{width: "100%"}}></img> */}
-                <video autoPlay loop muted>
+                <video autoPlay loop muted poster="/assets/image/poster.png">
                     <source src="/assets/image/miner-2.mp4" type="video/mp4" />
                 </video>
             </div>
