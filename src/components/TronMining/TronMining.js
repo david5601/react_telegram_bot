@@ -86,7 +86,7 @@ const TronMining = () => {
             <div>
                 {/* <img src={coinMining} style={{width: "100%"}}></img> */}
                 <video autoPlay loop muted>
-                    <source src={videoTron} type="video/mov" />
+                    <source src="/assets/image/miner-2.mp4" type="video/mp4" />
                 </video>
             </div>
             <TronMiningInfo thSpeed={trxSpeed} ratio={ratio}/>
