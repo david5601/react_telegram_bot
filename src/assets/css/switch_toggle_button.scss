@@ -60,7 +60,7 @@
 
 @mixin can-toggle-appearance 
 ( 
-  $can-toggle-width: 172px,
+  $can-toggle-width: 100%,
   $can-toggle-height: 45px,
   $can-toggle-border-radius: 40px,
   $can-toggle-offset: 2px,
@@ -68,7 +68,7 @@
   $can-toggle-switch-font-size: 14px,
   $can-toggle-shadow: 0 3px 3px rgba(black, 0.4)
 ){
-  $can-toggle-switch-width: $can-toggle-width;
+  $can-toggle-switch-width: 50%;
   
   input[type="checkbox"] {
 
@@ -81,6 +81,7 @@
     &:checked {
       ~ label {
         .can-toggle__switch {
+          &:before { transform: translate3d(0,0,0); }  
           &:after { transform: translate3d($can-toggle-width,0,0); }  
         }
       }
@@ -103,8 +104,9 @@
       &:before {
         font-size: $can-toggle-switch-font-size; 
         line-height: $can-toggle-height;
-        width: $can-toggle-width;
+        width: $can-toggle-switch-width;
         // padding: 0 12px;
+        transform: translate3d($can-toggle-width,0,0);
       }
       
       &:after {
@@ -112,6 +114,7 @@
         width: $can-toggle-switch-width; 
         line-height: $can-toggle-height;
         font-size: $can-toggle-switch-font-size;
+        
       }
       
       &:hover {
@@ -145,7 +148,6 @@
           
           &:before {
             content: attr(data-unchecked);
-            left: 0;
           }
         
           &:after {
