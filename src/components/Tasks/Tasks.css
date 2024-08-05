@@ -6,6 +6,7 @@
     flex-direction: column;
     align-items: center;
     min-width: 350px;
+    /* min-height: 100dvh */
 }
 
 .title p{
@@ -71,4 +72,8 @@
 
 .task-start {
     padding: 0px 10px;
+}
+
+.task-list {
+    min-height: 100dvh
 }

@@ -9,7 +9,8 @@ import { selectAccountId } from '../../selectors/accountSelectors'
 import { useSelector } from 'react-redux';
 
 const Tasks = () => {
-  const [initialzeTasks, setTasks] = useState()
+  const [initialzeTasks, setTasks] = useState();
+  const [isChecked, setChecked] = useState(false);
   const accountID = useSelector(selectAccountId);
 
   useEffect(() => {
@@ -40,6 +41,10 @@ const Tasks = () => {
     )
   }
 
+  const handleCheckboxChange = (event) => {
+    setChecked(event.target.checked);
+  }
+
   return (
     <>
       <div className='title'>
@@ -52,16 +57,18 @@ const Tasks = () => {
       <div className='subtitle'>
         But hey, only qualified actions unlock the galaxy! ✨
       </div>
-      <div class="can-toggle demo-rebrand-1">
-        <input id="d" type="checkbox"/>
+      <div className="can-toggle demo-rebrand-1">
+        <input id="d" type="checkbox" checked={isChecked} onChange={handleCheckboxChange}/>
         <label for="d">
-          <div class="can-toggle__switch" data-checked="Completed" data-unchecked="New"></div>
+          <div className="can-toggle__switch" data-checked="Completed" data-unchecked="New"></div>
         </label>
       </div>
       {/* {getInitialzeTasks()} */}
-      <TaskElement icon={""} title={"Test"} bonus={"Test"} during={"30"} state={false} key={0} />
-      <TaskComElement/>
-      
+      <div className='task-list'>
+        { isChecked ? 
+          <TaskComElement/> : <TaskElement icon={""} title={"Test"} bonus={"Test"} during={"30"} state={false} key={0} />
+        }
+      </div>
     </>
   )
 }
