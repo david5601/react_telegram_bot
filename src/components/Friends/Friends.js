@@ -15,7 +15,7 @@ const Friends = () => {
     const copyToClipboard = async () => {
         try {
             await navigator.clipboard.writeText(invteurl);
-            showModal()
+            showModal();
         } catch (err) {
             console.log(err)
         }

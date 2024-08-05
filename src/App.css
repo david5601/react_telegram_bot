@@ -125,7 +125,8 @@ body {
     font-weight: 500;
     color: white;
     border-radius: 20px;
-    height: 45px;
+    min-height: 45px;
+    min-width: 140px;
 }
 
 .btn3d.btn-primary:active,

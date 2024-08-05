@@ -1,7 +1,20 @@
 .title {
     display: flex;
-    align-items: center;
     padding-bottom: 13px;
+    font-size: 35px;
+    font-weight: 600;
+    flex-direction: column;
+    align-items: center;
+    min-width: 350px;
+}
+
+.title p{
+    margin: 7px;
+}
+
+.subtitle {
+    color: darkgray;
+    font-size: 20px;
 }
 
 .money-bag{
@@ -11,12 +24,15 @@
 
 .task-element {
     background-color: #161629;
-    height: 70px;
+    /* height: 100px; */
+    border-radius: 20px;
     display: flex;
-    align-items: center;
+    flex-direction: column;
     padding-left: 13px;
     margin-bottom: 15px;
+    margin-top: 20px;
     min-width: 331px;
+    flex-direction: column;
 }
 
 .task-icon {
@@ -29,7 +45,16 @@
 }
 
 .task-name {
-    margin: 0px;
+    padding-left: 10px;
+    margin-bottom: 5px;
+    font-size: 16px;
+    font-weight: 500;
+}
+.task-bonus {
+    margin-top: 0px;
+    margin-bottom: 15px;
+    padding-left: 10px;
+    color: rgb(104, 139, 255);
 }
 
 .task-improve-speed {
@@ -42,4 +67,8 @@
 .task-checked {
     max-height: 33px;
     padding-right: 15px;
+}
+
+.task-start {
+    padding: 0px 10px;
 }

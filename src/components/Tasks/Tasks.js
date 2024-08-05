@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import TaskElement from './TaskElement';
+import TaskComElement from './TaskComElement';
 import moneyBag from "../../assets/images/money-bag.png"
 import "./Tasks.css";
+import "../../assets/css/switch_toggle_button.scss"
 import axios from 'axios'
 import { selectAccountId } from '../../selectors/accountSelectors'
 import { useSelector } from 'react-redux';
@@ -41,11 +43,25 @@ const Tasks = () => {
   return (
     <>
       <div className='title'>
-        <h1>Tasks</h1>
-        <img src={moneyBag} className='money-bag'></img>
+        <p>Complete the</p>
+        <p>mission,</p>
+        <p>earn the commission!</p>
+        {/* <img src={moneyBag} className='money-bag'></img> */}
       </div>
 
-      {getInitialzeTasks()}
+      <div className='subtitle'>
+        But hey, only qualified actions unlock the galaxy! ✨
+      </div>
+      <div class="can-toggle demo-rebrand-1">
+        <input id="d" type="checkbox"/>
+        <label for="d">
+          <div class="can-toggle__switch" data-checked="Completed" data-unchecked="New"></div>
+        </label>
+      </div>
+      {/* {getInitialzeTasks()} */}
+      <TaskElement icon={""} title={"Test"} bonus={"Test"} during={"30"} state={false} key={0} />
+      <TaskComElement/>
+      
     </>
   )
 }
