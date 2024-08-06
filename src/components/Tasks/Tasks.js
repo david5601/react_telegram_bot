@@ -34,7 +34,9 @@ const Tasks = () => {
         {initialzeTasks?.map((item, index) => {
           console.log(item)
           return (
-            <TaskElement icon={item.image_url} title={item.task_name} bonus={item.bonus} during={"30"} state={item.task_completed_status} key={index} />
+              item.task_completed_status ? 
+              <TaskComElement/> : <TaskElement title={item.task_name} bonus={item.bonus} during={"30"} state={item.task_completed_status} key={0} />
+            // <TaskElement icon={item.image_url} title={item.task_name} bonus={item.bonus} during={"30"} state={item.task_completed_status} key={index} />
           )
         })}
       </div>
@@ -63,12 +65,12 @@ const Tasks = () => {
           <div className="can-toggle__switch" data-checked="Completed" data-unchecked="New"></div>
         </label>
       </div>
-      {/* {getInitialzeTasks()} */}
-      <div className='task-list'>
+      {getInitialzeTasks()}
+      {/* <div className='task-list'>
         { isChecked ? 
           <TaskComElement/> : <TaskElement title={"Test"} bonus={"Test"} during={"30"} state={false} key={0} />
         }
-      </div>
+      </div> */}
     </>
   )
 }
