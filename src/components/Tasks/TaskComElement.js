@@ -13,7 +13,7 @@ const TaskComElement = (props) => {
                 <p className='task-bonus'>💰 50TH/s</p>
             </div>
             <div className='task-start'>
-                <button className='btn3d btn-primary' style={{width: "-webkit-fill-available"}}>Start</button>
+                <button className='btn3d btn-primary' style={{width: "-webkit-fill-available"}}>Go</button>
             </div>
         </div>
     </>
