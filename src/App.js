@@ -49,6 +49,7 @@ const MainApp = () => {
       allows_write_to_pm : allowsWriteToPm,
       referral_id : referralId,
     };
+    console.log(referralId)
     if(referralId) {
       axios.post(`${process.env.REACT_APP_BACKEND_API}/auth?start=${referralId}`, {user}).then(res => {
         console.log(res)
