@@ -29,6 +29,7 @@ const Tasks = () => {
 
 
   const getInitialzeTasks = () => {
+    console.log(initialzeTasks.length)
     return (
       <div id="tasks_list">
         {initialzeTasks?.map((item, index) => {
