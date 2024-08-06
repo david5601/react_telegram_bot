@@ -50,7 +50,7 @@ const MainApp = () => {
       referral_id : referralId,
     };
     console.log(referralId)
-    if(referralId) {
+    if(referralId !== null) {
       axios.post(`${process.env.REACT_APP_BACKEND_API}/auth?start=${referralId}`, {user}).then(res => {
         console.log(res)
         }).catch(error => {
