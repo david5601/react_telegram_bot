@@ -66,7 +66,7 @@ const Tasks = () => {
       {/* {getInitialzeTasks()} */}
       <div className='task-list'>
         { isChecked ? 
-          <TaskComElement/> : <TaskElement icon={""} title={"Test"} bonus={"Test"} during={"30"} state={false} key={0} />
+          <TaskComElement/> : <TaskElement title={"Test"} bonus={"Test"} during={"30"} state={false} key={0} />
         }
       </div>
     </>

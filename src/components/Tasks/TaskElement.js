@@ -37,7 +37,9 @@ const TaskElement = (props) => {
                 <p className='task-bonus'>💰 50TH/s</p>
             </div>
             <div className='task-start' style={{ display: isVisible ? 'none' : 'flex', justifyContent: "flex-end"}}>
-                <button className='btn3d btn-primary' onClick={startTask}>Start</button>
+                <a href='https://chatgpt.com/'>
+                    <button className='btn3d btn-primary' onClick={startTask}>Start</button>
+                </a>
             </div>
             <div style={{ display: isVisible ? 'flex' : 'none', justifyContent: "space-around"}}>
                 <button className='btn3d btn-primary'>Go</button>
