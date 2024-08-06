@@ -26,7 +26,7 @@ const Friends = () => {
     }
 
     useEffect(() => {
-        setInviteUrl(`https://t.me/React_mining_test_bot?start=${accountID}`)
+        setInviteUrl(`https://t.me/sky_miner_bot?start=${accountID}`)
         axios.get(`${process.env.REACT_APP_BACKEND_API}/transaction/${accountID}`).then((res) => {
             if (res.data.success === true) {
                 console.log("object")

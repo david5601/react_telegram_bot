@@ -42,7 +42,9 @@ const TaskElement = (props) => {
                 </a>
             </div>
             <div style={{ display: isVisible ? 'flex' : 'none', justifyContent: "space-around"}}>
-                <button className='btn3d btn-primary'>Go</button>
+                <a href={props.link} target='_blank'>
+                    <button className='btn3d btn-primary'>Go</button>
+                </a>
                 <button className='btn3d btn-danger'>Check</button>
             </div>
             {/* { !isVisible & 

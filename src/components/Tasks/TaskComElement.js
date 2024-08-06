@@ -9,8 +9,8 @@ const TaskComElement = (props) => {
     <>
         <div className='task-element'>
             <div>
-                <p className='task-name'>Watch & like the video on YouTube</p>
-                <p className='task-bonus'>💰 50TH/s</p>
+                <p className='task-name'>{props.title}</p>
+                <p className='task-bonus'>💰 {new BigNumber(props.bonus).div("1000000000").toString()}</p>
             </div>
             <div className='task-start'>
                 <button className='btn3d btn-primary' style={{width: "-webkit-fill-available"}}>Go</button>
