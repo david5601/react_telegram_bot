@@ -34,7 +34,7 @@ const Tasks = () => {
         {initialzeTasks?.map((item, index) => {
           console.log(item)
           return (
-              item.task_completed_status ? 
+              isChecked ? 
               <TaskComElement/> : <TaskElement title={item.task_name} bonus={item.bonus} during={"30"} state={item.task_completed_status} key={0} link={item.link}/>
             // <TaskElement icon={item.image_url} title={item.task_name} bonus={item.bonus} during={"30"} state={item.task_completed_status} key={index} />
           )
