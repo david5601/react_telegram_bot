@@ -33,11 +33,11 @@ const TaskElement = (props) => {
         <div className='task-element'>
             {/* <img src={`${process.env.REACT_APP_BACKEND}/uploads/${props.icon}`} className='task-icon'></img> */}
             <div>
-                <p className='task-name'>Watch & like the video on YouTube</p>
-                <p className='task-bonus'>💰 50TH/s</p>
+                <p className='task-name'>{props.title}</p>
+                <p className='task-bonus'>💰 {new BigNumber(props.bonus).div("1000000000").toString()}TH/s</p>
             </div>
             <div className='task-start' style={{ display: isVisible ? 'none' : 'flex', justifyContent: "flex-end"}}>
-                <a href='https://chatgpt.com/' target='_blank'>
+                <a href={props.link} target='_blank'>
                     <button className='btn3d btn-primary' onClick={startTask}>Start</button>
                 </a>
             </div>
