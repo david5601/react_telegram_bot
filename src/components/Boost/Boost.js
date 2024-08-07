@@ -61,7 +61,7 @@ const Boost = () => {
     return (
         <>
             <div className='group-box'>
-                <h2 className='boost-title'>Payment Tron:</h2>
+                <h2 className='boost-title'>Payment { isBnb==='true' ? "Binance" : "Tron"}:</h2>
                 <div className='common'>
                     <p>1. Click "Generate Wallet"</p>
                     <p>2. Send the any amount to this wallet</p>
@@ -76,7 +76,7 @@ const Boost = () => {
                 {!isButtonVisible && (
                     <>
                         <div className='wallet-address' onClick={copyToClipboard}>
-                            <p>{walletAddress}</p>
+                            <p style={{padding: "0 20px", overflow: "hidden", textOverflow: "ellipsis"}}>{walletAddress}</p>
                         </div>
                         <p className='wallet-address-copy'>Click on the wallet to copy</p>
                     </>
