@@ -7,3 +7,4 @@ export const selectTrxValue = state => state.account.trxValue;
 export const selectBNBRatio = state => state.account.bnbRatio;
 export const selectBNBValue = state => state.account.bnbValue;
 export const selectIsBNB = state => state.account.isBnb;
+export const selectAccount = state => state.account.account;

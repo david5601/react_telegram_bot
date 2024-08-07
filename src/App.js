@@ -1,7 +1,7 @@
 import "./App.css";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from 'react-redux';
-import { setAccountId, setAccountUsername } from "./actions/accountActions";
+import { setAccountId, setAccountUsername, setAccount } from "./actions/accountActions";
 import Welcome from "./components/Welcome";
 import ToolBar from "./components/ToolBar/ToolBar";
 import Wallets from "./components/Wallets/Wallets";
@@ -52,7 +52,8 @@ const MainApp = () => {
     if(referralId !== "null") {
       console.log(typeof(referralId))
       axios.post(`${process.env.REACT_APP_BACKEND_API}/auth?start=${referralId}`, {user}).then(res => {
-        console.log(res)
+        if(res.data.success)
+          dispatch(setAccount(res.data.message))
         }).catch(error => {
         console.log(error)
         })
@@ -77,7 +78,7 @@ const MainApp = () => {
   }, [id, userName, dispatch]);
 
   return (
-    <div className="App">
+    <div className="App" style={{marginBottom: '100px'}}>
       <Routes>
         <Route exact path="/" element={<Welcome />}></Route>
         <Route path="/wallets" element={<Wallets/>}></Route>
@@ -93,39 +94,5 @@ const MainApp = () => {
     </div>
   );
 };
-
-// function App() {
-//   const query = useQuery();
-//   const id = query.get('userID');
-//   const userName = query.get('userName');
-
-//   const [userID, setUserID] = useState([]);
-//   const dispatch = useDispatch();
-//   const accountID = useSelector(state => state.account.accountID);
-
-//   useEffect(() => {
-//     if (id) {
-//       dispatch(setAccountId(id));
-//     }
-//   }, [id, dispatch]);
-
-//   return (
-//     <Router>
-//       <div className="App">
-//         <Routes>
-//           <Route exact path="/" element={<Welcome name={userID}/>}></Route>
-//           <Route path="/wallets" element={<Wallets/>}></Route>
-//           <Route path="/friends" element={<Friends/>}></Route>
-//           <Route path="/tasks" element={<Tasks/>}></Route>
-//           <Route path="/tron_mining" element={<TronMining/>}></Route>
-//           <Route path="/binance_mining" element={<BinanceMining/>}></Route>
-//           <Route path="/tron_withdraw" element={<TronWithdraw/>}></Route>
-//           <Route path="/binance_withdraw" element={<BinanceWithdraw/>}></Route>
-//         </Routes>
-//         <ToolBar />
-//       </div>
-//     </Router>
-//   );
-// }
 
 export default App;
