@@ -83,10 +83,10 @@ const Friends = () => {
                                 </div>
                                 <div className='referral-section__inner'>
                                     <div className='referral-section-profit-amount'>
-                                        0.0000
+                                        0
                                     </div>
                                     <div className='referral-section-profit-text'>
-                                        Profit Trx
+                                        Total Referrals
                                     </div>
                                 </div>
                                 <div className='referral-section__inner'>
@@ -102,15 +102,7 @@ const Friends = () => {
                                         0.0000
                                     </div>
                                     <div className='referral-section-profit-text'>
-                                        Profit Trx
-                                    </div>
-                                </div>
-                                <div className='referral-section__inner'>
-                                    <div className='referral-section-profit-amount'>
-                                        0.0000
-                                    </div>
-                                    <div className='referral-section-profit-text'>
-                                        Profit Trx
+                                        Profit BNB
                                     </div>
                                 </div>
                             </div>
