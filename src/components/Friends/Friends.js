@@ -83,13 +83,13 @@ const Friends = () => {
                                 </div>
                                 <div className='referral-section__inner'>
                                     <div className='referral-section-profit-amount'>
-                                        0
+                                        {lstestOperations?.length || 0}
                                     </div>
                                     <div className='referral-section-profit-text'>
                                         Total Referrals
                                     </div>
                                 </div>
-                                <div className='referral-section__inner'>
+                                {/* <div className='referral-section__inner'>
                                     <div className='referral-section-profit-amount'>
                                         0.0000
                                     </div>
@@ -104,7 +104,7 @@ const Friends = () => {
                                     <div className='referral-section-profit-text'>
                                         Profit BNB
                                     </div>
-                                </div>
+                                </div> */}
                             </div>
                         </div>
                     </div>
