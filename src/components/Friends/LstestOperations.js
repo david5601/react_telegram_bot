@@ -58,7 +58,7 @@ const LstestOperations = (props) => {
                   <td>{formatDateString(item.created_at)}</td>
                   <td><img src={getCoinIcon(item.token_type)} style={{width: "35px"}}/></td>
                   <td>{new BigNumber(item.amount).div(new BigNumber("1000000000")).toString()}</td>
-                  <td>{item.status ? 'deposit' : 'withdraw'}</td>
+                  <td>{!item.status ? 'deposit' : 'withdraw'}</td>
                   <td>{'success'}</td>
                 </tr>
               );
