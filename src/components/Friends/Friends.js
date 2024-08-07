@@ -27,11 +27,12 @@ const Friends = () => {
     }
 
     const getTotalProfit = () => {
+        console.log("lstestOperations", lstestOperations)
         const sumOfAmounts = lstestOperations?.reduce((sum, item) => {
             return sum.plus(new BigNumber(item.amount));
         }, new BigNumber(0));
-
-        return sumOfAmounts.div("1000000000").toString()
+        console.log("sumOfAmounts", sumOfAmounts)
+        return sumOfAmounts?.div("1000000000").toString() || 0
     }
 
     useEffect(() => {
@@ -51,7 +52,7 @@ const Friends = () => {
 
     return (
         <>
-            <div style={{ minHeight: "170vh" }}>
+            <div style={{ minHeight: "150vh" }}>
                 <div>
                     <h1 className='title'>Referral program</h1>
                 </div>
@@ -100,7 +101,7 @@ const Friends = () => {
                                 </div>
                                 <div className='referral-section__inner'>
                                     <div className='referral-section-profit-amount'>
-                                       {getTotalProfit()}
+                                       {getTotalProfit()} th/s
                                     </div>
                                     <div className='referral-section-profit-text'>
                                         Profit THx
