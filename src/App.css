@@ -235,3 +235,38 @@ font-size: 20px;
   padding: 10px;
   border-radius: 5px;
 }
+
+.success-alert-content {
+  position: fixed;
+  z-index: 1000;
+  padding-top: 130px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.success-alert {
+  background-color: #394050;
+  display: none;
+  color: white;
+  font-size: 15px;
+  border-radius: 20px;
+
+  position: fixed;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-content: center;
+  flex-direction: column;
+  padding: 15px;
+  width: 90%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19); /* Adjust shadow as needed */
+  z-index: 1000; 
+}
+
+.success-alert h2 {
+  
+}

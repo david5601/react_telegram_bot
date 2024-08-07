@@ -12,6 +12,7 @@ import { setAccount } from '../../actions/accountActions';
 const Tasks = () => {
   const [initialzeTasks, setTasks] = useState();
   const [isChecked, setChecked] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
   const accountID = useSelector(selectAccountId);
   const account = useSelector(selectAccount);
   const dispatch = useDispatch();
@@ -54,6 +55,8 @@ const Tasks = () => {
               if (res.data.success)
                 //add success notification here.
                 getTasks()
+                console.log("object")
+                setIsSuccess(!isSuccess)
             }).catch(error => {
               console.log(error)
             })
@@ -78,6 +81,8 @@ const Tasks = () => {
           if (res.data.success)
             //add success notification here.
             getTasks()
+            setIsSuccess(!isSuccess)
+
         }).catch(error => {
           console.log(error)
         })
@@ -104,6 +109,10 @@ const Tasks = () => {
     setChecked(event.target.checked);
   }
 
+  const checkSuccessMessage = () => {
+    setIsSuccess(!isSuccess);
+  }
+
   return (
     <>
       <div className='title'>
@@ -122,12 +131,17 @@ const Tasks = () => {
           <div className="can-toggle__switch" data-checked="Completed" data-unchecked="New"></div>
         </label>
       </div>
+      
       {getInitialzeTasks()}
-      {/* <div className='task-list'>
-        { isChecked ? 
-          <TaskComElement/> : <TaskElement title={"Test"} bonus={"Test"} during={"30"} state={false} key={0} />
-        }
-      </div> */}
+      
+      <div className='success-alert-content' style={{ display: isSuccess ? 'block' : 'none' }}>
+        <div className='success-alert' style={{display: "flex", alignContent: "center", flexDirection: "column"}}>
+          <h2>Conguratulation!</h2>
+          <p>Stay shining, keep grinding, in every cloud, find that silver lining</p>
+          <button className='btn3d btn-primary' onClick={checkSuccessMessage}>OK</button>
+        </div>
+      </div>
+      
     </>
   )
 }
