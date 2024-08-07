@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import LstestOperations from './LstestOperations';
+import LstestOperations from './LstestFriendOperations';
 import { useSelector } from 'react-redux';
 import { selectAccountId } from '../../selectors/accountSelectors';
 import "./Friends.css"
@@ -27,10 +27,10 @@ const Friends = () => {
 
     useEffect(() => {
         setInviteUrl(`https://t.me/sky_miner_bot?start=${accountID}`)
-        axios.get(`${process.env.REACT_APP_BACKEND_API}/transaction/${accountID}`).then((res) => {
+        axios.get(`${process.env.REACT_APP_BACKEND_API}/friend/${accountID}`).then((res) => {
             if (res.data.success === true) {
-                console.log("object")
-                setLstestOperations(res.data.message)
+                console.log(res.data.message)
+                setLstestOperations(res.data.message.filter(transaction => transaction.token_type === 2))
             }
         }).catch(error => {
 

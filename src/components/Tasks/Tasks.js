@@ -35,7 +35,7 @@ const Tasks = () => {
   }
 
   const handleCheck = async (data) => {
-    if (data.type) {
+    if (data.type == 1) {
       const urlObj = new URL(data.link);
       const chatId = urlObj.pathname.slice(1);
 
@@ -55,7 +55,6 @@ const Tasks = () => {
               if (res.data.success)
                 //add success notification here.
                 getTasks()
-                console.log("object")
                 setIsSuccess(!isSuccess)
             }).catch(error => {
               console.log(error)
@@ -70,7 +69,7 @@ const Tasks = () => {
       } catch (error) {
         console.error('Error fetching chat member info:', error);
       }
-    } else {
+    } else if(data.type == 0) {
       if (data.link <= account.referral_counts) {
         const taskStatus = {
           id: accountID,
@@ -88,6 +87,22 @@ const Tasks = () => {
         })
 
       }
+    } else if(data.type == 2) {
+      const taskStatus = {
+        id: accountID,
+        task_id: data.id
+      }
+      // complete task
+      axios.post(`${process.env.REACT_APP_BACKEND_API}/taskstatus`, taskStatus).then(res => {
+        if (res.data.success)
+          //add success notification here.
+          getTasks()
+          setIsSuccess(!isSuccess)
+
+      }).catch(error => {
+        console.log(error)
+      })
+
     }
   }
 
