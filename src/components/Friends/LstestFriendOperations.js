@@ -4,7 +4,7 @@ import searchIcon from "../../assets/images/Vector-Search-PNG-Image.png"
 import tronIcon from "../../assets/images/tron.webp"
 import binanceIcon from "../../assets/images/Binance.webp"
 import BigNumber from 'bignumber.js'
-let row = ["Date", "Type", "Username"];
+let row = ["Date", "Type", "Profit"];
 
 const LstestFriendOperations = (props) => {
 
@@ -57,7 +57,7 @@ const LstestFriendOperations = (props) => {
                 <tr key={key}>
                   <td>{formatDateString(item.created_at)}</td>
                   <td>Invite Friend</td>
-                  <td>@{item.username}</td>
+                  <td>1 th/s</td>
                 </tr>
               );
             })}
@@ -80,7 +80,7 @@ const LstestFriendOperations = (props) => {
                             Type
                         </th>
                         <th style={{width: "16%"}}>
-                            Username
+                            TH Speed
                         </th>
                     </tr>
                 </thead>
