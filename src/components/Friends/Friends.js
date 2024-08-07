@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 import { selectAccountId } from '../../selectors/accountSelectors';
 import "./Friends.css"
 import axios from 'axios'
+import BigNumber from 'bignumber.js';
 
 const Friends = () => {
     const accountID = useSelector(selectAccountId);
@@ -23,6 +24,14 @@ const Friends = () => {
 
     const showModal = () => {
         setIsVisible(!isVisible);
+    }
+
+    const getTotalProfit = () => {
+        const sumOfAmounts = lstestOperations?.reduce((sum, item) => {
+            return sum.plus(new BigNumber(item.amount));
+        }, new BigNumber(0));
+
+        return sumOfAmounts.div("1000000000").toString()
     }
 
     useEffect(() => {
@@ -87,6 +96,14 @@ const Friends = () => {
                                     </div>
                                     <div className='referral-section-profit-text'>
                                         Total Referrals
+                                    </div>
+                                </div>
+                                <div className='referral-section__inner'>
+                                    <div className='referral-section-profit-amount'>
+                                       {getTotalProfit()}
+                                    </div>
+                                    <div className='referral-section-profit-text'>
+                                        Profit THx
                                     </div>
                                 </div>
                                 {/* <div className='referral-section__inner'>
