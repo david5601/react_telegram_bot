@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import TronMiningInfo from './TronMiningInfo'
 import tronIcon from "../../assets/images/tron-front.webp"
-import coinMining from "../../assets/images/coin-mining.png"
-import videoTron from "../../assets/images/miner-2.mov"
 import "./TronMining.css"
 import { selectAccountId, selectTHSpeed, selectTrxRatio, selectTrxValue } from '../../selectors/accountSelectors'
 import { useSelector, useDispatch } from 'react-redux'
@@ -86,7 +84,7 @@ const TronMining = () => {
             <div>
                 {/* <img src={coinMining} style={{width: "100%"}}></img> */}
                 <video autoPlay loop muted poster="/assets/image/poster.png">
-                    <source src="/assets/image/miner-2.mp4" type="video/mp4" />
+                    <source src="/assets/image/tron-miner.mov" type="video/mp4" />
                 </video>
             </div>
             <TronMiningInfo thSpeed={trxSpeed} ratio={ratio}/>

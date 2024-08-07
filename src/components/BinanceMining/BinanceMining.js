@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import bnbIcon from "../../assets/images/bnb-front.webp"
-import coinMining from "../../assets/images/coin-mining.png"
-import videoTron from "../../assets/images/miner-2.mp4"
+// import coinMining from "../../assets/images/coin-mining.png"
+// import videoTron from "../../assets/images/miner-2.mp4"
 import { Link } from 'react-router-dom'
 import BinanceMiningInfo from './BinanceMiningInfo'
 import "./BinanceMining.css"
@@ -86,7 +86,7 @@ const BinanceMining = () => {
         <div>
             {/* <img src={coinMining} style={{width: "100%"}}></img> */}
             <video autoPlay loop muted poster="/assets/image/poster.png">
-                <source src="/assets/image/miner-2.mp4" type="video/mp4" />
+                <source src="/assets/image/bnb-miner-2.mov" type="video/mp4" />
             </video>
         </div>
         <BinanceMiningInfo thSpeed={bnbSpeed} ratio={ratio}/>
