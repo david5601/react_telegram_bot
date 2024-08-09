@@ -13,6 +13,7 @@ const Tasks = () => {
   const [initialzeTasks, setTasks] = useState();
   const [isChecked, setChecked] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  const [isFaild, setIsFaild] = useState(false);
   const accountID = useSelector(selectAccountId);
   const account = useSelector(selectAccount);
   const dispatch = useDispatch();
@@ -56,6 +57,7 @@ const Tasks = () => {
                 //add success notification here.
                 getTasks()
                 setIsSuccess(!isSuccess)
+                setIsFaild(!isFaild)
             }).catch(error => {
               console.log(error)
             })
@@ -81,6 +83,7 @@ const Tasks = () => {
             //add success notification here.
             getTasks()
             setIsSuccess(!isSuccess)
+            setIsFaild(!isFaild)
 
         }).catch(error => {
           console.log(error)
@@ -98,6 +101,7 @@ const Tasks = () => {
           //add success notification here.
           getTasks()
           setIsSuccess(!isSuccess)
+          setIsFaild(!isFaild)
 
       }).catch(error => {
         console.log(error)
@@ -126,6 +130,10 @@ const Tasks = () => {
 
   const checkSuccessMessage = () => {
     setIsSuccess(!isSuccess);
+  }
+
+  const checkFaildMessage = () => {
+    setIsFaild(!isFaild)
   }
 
   return (
@@ -157,7 +165,7 @@ const Tasks = () => {
         </div>
       </div>
 
-      <div className='success-alert-content' style={{ display: isSuccess ? 'none' : 'block' }}>
+      <div className='success-alert-content' style={{ display: checkFaildMessage ? 'block' : 'none' }}>
         <div className='success-alert' style={{display: "flex", alignContent: "center", flexDirection: "column"}}>
           <h2>Faild!</h2>
           <p>You didn't perform this task.</p>
