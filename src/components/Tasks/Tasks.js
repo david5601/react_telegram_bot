@@ -165,7 +165,7 @@ const Tasks = () => {
         </div>
       </div>
 
-      <div className='success-alert-content' style={{ display: checkFaildMessage ? 'block' : 'none' }}>
+      <div className='success-alert-content' style={{ display: isFaild ? 'block' : 'none' }}>
         <div className='success-alert' style={{display: "flex", alignContent: "center", flexDirection: "column"}}>
           <h2>Faild!</h2>
           <p>You didn't perform this task.</p>
