@@ -59,11 +59,6 @@ const Tasks = () => {
                 setIsSuccess(!isSuccess)
                 // setIsFaild(!isFaild)
               }
-              else {
-                // setIsSuccess(!isSuccess)
-                setIsFaild(!isFaild)
-              }
-              
             }).catch(error => {
               console.log(error)
             })
@@ -90,16 +85,16 @@ const Tasks = () => {
             getTasks()
             setIsSuccess(!isSuccess)
           }
-          else {
-            setIsFaild(!isFaild)
-          }
-            
-
+          
         }).catch(error => {
           console.log(error)
         })
 
       }
+      else {
+        setIsFaild(!isFaild)
+      }
+      
     } else if(data.type == 2) {
       const taskStatus = {
         id: accountID,
@@ -112,11 +107,6 @@ const Tasks = () => {
           getTasks()
           setIsSuccess(!isSuccess)
         }
-        else {
-          setIsFaild(!isFaild)
-        }
-          
-
       }).catch(error => {
         console.log(error)
       })
@@ -147,7 +137,7 @@ const Tasks = () => {
   }
 
   const checkFaildMessage = () => {
-    setIsFaild(!isFaild)
+    setIsFaild(!isFaild);
   }
 
   return (
