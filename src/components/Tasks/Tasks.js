@@ -53,11 +53,17 @@ const Tasks = () => {
               task_id: data.id
             }
             axios.post(`${process.env.REACT_APP_BACKEND_API}/taskstatus`, taskStatus).then(res => {
-              if (res.data.success)
+              if (res.data.success) {
                 //add success notification here.
                 getTasks()
                 setIsSuccess(!isSuccess)
+                // setIsFaild(!isFaild)
+              }
+              else {
+                // setIsSuccess(!isSuccess)
                 setIsFaild(!isFaild)
+              }
+              
             }).catch(error => {
               console.log(error)
             })
@@ -79,11 +85,15 @@ const Tasks = () => {
         }
         // complete task
         axios.post(`${process.env.REACT_APP_BACKEND_API}/taskstatus`, taskStatus).then(res => {
-          if (res.data.success)
+          if (res.data.success) {
             //add success notification here.
             getTasks()
             setIsSuccess(!isSuccess)
+          }
+          else {
             setIsFaild(!isFaild)
+          }
+            
 
         }).catch(error => {
           console.log(error)
@@ -97,11 +107,15 @@ const Tasks = () => {
       }
       // complete task
       axios.post(`${process.env.REACT_APP_BACKEND_API}/taskstatus`, taskStatus).then(res => {
-        if (res.data.success)
+        if (res.data.success) {
           //add success notification here.
           getTasks()
           setIsSuccess(!isSuccess)
+        }
+        else {
           setIsFaild(!isFaild)
+        }
+          
 
       }).catch(error => {
         console.log(error)
