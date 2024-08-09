@@ -156,6 +156,14 @@ const Tasks = () => {
           <button className='btn3d btn-primary' onClick={checkSuccessMessage}>OK</button>
         </div>
       </div>
+
+      <div className='success-alert-content' style={{ display: isSuccess ? 'none' : 'block' }}>
+        <div className='success-alert' style={{display: "flex", alignContent: "center", flexDirection: "column"}}>
+          <h2>Faild!</h2>
+          <p>You didn't perform this task.</p>
+          <button className='btn3d btn-primary' onClick={checkSuccessMessage}>OK</button>
+        </div>
+      </div>
       
     </>
   )
