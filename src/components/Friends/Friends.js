@@ -101,7 +101,7 @@ const Friends = () => {
                                 </div>
                                 <div className='referral-section__inner'>
                                     <div className='referral-section-profit-amount'>
-                                       {getTotalProfit()} th/s
+                                       {getTotalProfit()} TH/s
                                     </div>
                                     <div className='referral-section-profit-text'>
                                         Profit THx
