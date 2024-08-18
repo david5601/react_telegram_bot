@@ -10,11 +10,13 @@ import BigNumber from "bignumber.js";
 import axios from "axios";
 const TronWithdraw = (props) => {
   const [isVisible, setIsVisible] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
   const accountID = useSelector(selectAccountId);
   const trxValue = useSelector(selectTrxValue);
   const [amount, setAmount] = useState(0);
   const [address, setAddress] = useState("");
   const [errorContent, setErrorContent] = useState("");
+  const [successContent, setSuccessContent] = useState("");
   const handleWithdrawClick = () => {
     if (amount < 100) {
       setIsVisible(true);
@@ -41,10 +43,16 @@ const TronWithdraw = (props) => {
         .post(`${process.env.REACT_APP_BACKEND_API}/withdraw`, request)
         .then((res) => {
           if (res.data.success === true) {
-            console.log("object");
+            console.log("tron: object");
+            // console.log("object")
+            setIsSuccess(true)
+            setSuccessContent("Successfully! Please wait for checking the contract.")
+            return;
           }
         })
-        .catch((error) => {})
+        .catch((error) => {
+          console.log("tron: object error");
+        })
         .finally();
     } else {
       //implement here
@@ -95,6 +103,9 @@ const TronWithdraw = (props) => {
         style={{ display: isVisible ? "block" : "none" }}
       >
         {errorContent}
+      </div>
+      <div className='primary-alert' style={{display: isSuccess ? "block" : "none"}}>
+          {successContent}
       </div>
     </>
   );

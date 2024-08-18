@@ -236,6 +236,15 @@ font-size: 20px;
   border-radius: 5px;
 }
 
+.primary-alert {
+  background-color: #0edf7d;
+  display: none;
+  color: white;
+  font-size: 15px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
 .success-alert-content {
   position: fixed;
   z-index: 1000;
